@@ -1,0 +1,59 @@
+.card-foot{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+  .image{
+    max-height: 544px;
+    transition: max-height .5s ease;
+  }
+  .price-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .5s ease;
+  }
+  &:hover{
+    .image{
+      max-height: 495px;
+    }
+    .price-wrapper{
+      max-height: 120px;
+    }
+    .title-wrapper{
+      gap: 145px;
+    }
+  }
+}
+.info{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .title-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition:all .3s ease;
+
+    .title{
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 140%;
+    }
+    .description{
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 140%;
+      color: #E76325;
+    }
+    .hit{
+      border: 1px solid #EAE7DC;
+      padding: 5px 10px;
+    }
+  }
+
+}

@@ -1,0 +1,25 @@
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+  margin-bottom: 180px;
+
+  .header{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+
+    h2{
+      font-weight: 400;
+      font-size: 80px;
+      line-height: 90%;
+    }
+  }
+
+  .cards{
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(850px, 1fr) );
+    gap: 60px 20px;
+  }
+}
