@@ -12,4 +12,5 @@ export const Routes = {
     CONTACTS: "/contacts",
     ABOUTUS: "/about-us",
     PROMOTION: "/promotion",
+    POLICY: "/policy",
 };

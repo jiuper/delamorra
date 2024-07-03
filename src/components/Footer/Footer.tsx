@@ -6,6 +6,7 @@ import { socialItems } from "@/components/Header";
 import { Logo } from "@/components/Logo";
 import { Navbar } from "@/components/NavBar";
 import PAYMENTS from "@/shared/assests/payments.png";
+import { Routes } from "@/shared/constants/Routing";
 import { CustomImage } from "@/shared/ui/CustomImage";
 
 import styles from "./Footer.module.scss";
@@ -33,10 +34,10 @@ export const Footer = () => {
                             <span>Della Morra Loft</span>
                         </div>
                         <div className={cx("links")}>
-                            <Link className={cx("privacy")} href="/">
+                            <Link className={cx("privacy")} href={Routes.POLICY}>
                                 Политика конфиденциальности
                             </Link>
-                            <Link className={cx("link")} href="/">
+                            <Link className={cx("link")} href={Routes.POLICY}>
                                 Условия использования
                             </Link>
                             <span>© Della Morra 2024</span>

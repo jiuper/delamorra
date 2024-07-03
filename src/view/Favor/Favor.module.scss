@@ -1,0 +1,132 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  margin-bottom: 180px;
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    .title {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 150%;
+      text-align: center;
+      color: #7E7C7A;
+      max-width: 800px;
+      width: 100%;
+    }
+
+    h1 {
+      font-weight: 400;
+      font-size: 128px;
+      line-height: 90%;
+      color: #232120;
+    }
+  }
+
+
+  .carousel-cards{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    .buttons{
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+    [data-pc-section="container"]{
+      margin-bottom: 30px;
+    }
+    [data-pc-section="itemscontainer"]{
+      gap: 20px;
+    }
+    [data-p-highlight="true"]{
+      [data-pc-section="indicatorbutton"]{
+        background: #1c1b1f;
+      }
+
+    }
+    [data-pc-section="indicators"]{
+      position: absolute;
+      top: 87%;
+      left: 43%;
+      transform: translate(50%, 0);
+    }
+    [data-pc-section="previousbutton"]{
+      position: absolute;
+      border: 1px solid #EAE7DC;
+      width: 58px;
+      height: 58px;
+      border-radius: 0;
+      transform: rotate(180deg);
+      bottom: 87%;
+
+      &:hover,
+      &:focus,
+      &:active{
+        background: #1c1b1f;
+
+        .next-icon,
+        .prev-icon{
+          path{
+            stroke: #fff;
+          }
+
+        }
+      }
+    }
+    [data-pc-section="nextbutton"]{
+      position: absolute;
+      border: 1px solid #EAE7DC;
+      width: 58px;
+      height: 58px;
+      border-radius: 0;
+      bottom: 87%;
+      right: 0;
+
+      &:hover,
+      &:focus,
+      &:active{
+        background: #1c1b1f;
+
+        .next-icon,
+        .prev-icon{
+          path{
+            stroke: #fff;
+          }
+
+        }
+      }
+    }
+    .next-icon,
+    .prev-icon{
+      width: 12px;
+      height: 10px;
+      path{
+        stroke: #7E7C7A;
+      }
+
+    }
+  }
+
+  .tariffs{
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    h2{
+      font-weight: 400;
+      font-size: 80px;
+      line-height: 90%;
+      color: #232120;
+    }
+  }
+  .cards{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+}

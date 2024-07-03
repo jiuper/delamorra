@@ -47,7 +47,7 @@ export const FormBooking = () => {
                                     <UIInputText placeholder="Номер телефона" isFullWidth />
                                 </div>
                             </div>
-                            <InputTextarea className={cx("textarea")} placeholder="Комментарии" />
+                            <InputTextarea autoResize className={cx("textarea")} placeholder="Комментарии" />
                             <div className={cx("buttons")}>
                                 <div className={cx("privacy")}>
                                     <i>*</i>Нажимая на кнопку вы соглашаетесь с{" "}

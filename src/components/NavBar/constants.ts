@@ -16,7 +16,7 @@ export const items: NavbarTypeProps = [
             },
             {
                 label: "Аренда оборудования",
-                url: "/assortment/870cd1ef-b2c8-4329-8deb-5793b5499674",
+                url: "/equipments",
             },
             {
                 label: "Аренда реквизита",
@@ -25,6 +25,10 @@ export const items: NavbarTypeProps = [
             {
                 label: "Ассистент на сьемку",
                 url: "/assortment/79ea5405-125a-4f7b-82a8-e1628870d920",
+            },
+            {
+                label: "Аренда фотостудии",
+                url: "/favor",
             },
         ],
     },

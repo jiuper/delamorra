@@ -27,3 +27,11 @@ export type GetEquipmentDto = {
     description: string;
     pictureId: string;
 };
+
+export type GetTariffDto = {
+    id: string;
+    timeInterval: string;
+    savings: number;
+    options: string[];
+    price: number;
+};

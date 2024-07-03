@@ -32,7 +32,7 @@
 .form{
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(560px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   min-height: 560px;
 }
 
@@ -94,6 +94,7 @@
       .inputs{
         display: flex;
         flex-wrap: wrap;
+        gap: 10px;
         width: 100%;
 
         .input-wrapper{
