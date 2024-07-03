@@ -32,7 +32,7 @@ export const Booking = () => {
                 <div className={cx("photos")}>
                     {listImg.map((item, index) => (
                         <div key={index} className={cx("image")}>
-                            <CustomImage src={item} alt="image" />
+                            <CustomImage className={cx("img")} src={item} alt="image" />
                         </div>
                     ))}
                 </div>

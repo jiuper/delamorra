@@ -2,6 +2,7 @@
     position: relative;
     display: block;
     width: fit-content;
+    font-family: 'ManropeRegular', sans-serif;
 
     &:focus-within {
         .label {
@@ -133,10 +134,10 @@
 .text-field {
     background: transparent;
     height: 58px;
+    font-family: 'ManropeRegular', sans-serif;
 
     &.small {
         padding: 13px 12px;
-        @include text-Body1;
 
         &.with-label {
             padding: 20px 12px 6px 12px;
@@ -153,7 +154,6 @@
 
     &.medium {
         padding: 19px 24px;
-        @include text-Subtitle1;
         font-weight: 400;
 
         &.icon-start {
@@ -230,6 +230,7 @@
     top: 50%;
     transform: translateY(-50%);
     transition: $transition-fast;
+    font-family: 'ManropeRegular', sans-serif;
 
     &.white {
         color: $color-light;
@@ -241,11 +242,10 @@
 
     &.small {
         padding-left: 12px;
-        @include text-Body1;
+
     }
 
     &.medium {
-        @include text-Subtitle1;
         padding-left: 16px;
         font-weight: 400;
     }
@@ -256,6 +256,7 @@
     top: 48px;
     left: 0;
     white-space: nowrap;
+    font-family: 'ManropeRegular', sans-serif;
 
     &.purple {
         color: $color-red-60;
@@ -265,5 +266,4 @@
         color: $color-red-light;
     }
 
-    @include text-Body3;
 }

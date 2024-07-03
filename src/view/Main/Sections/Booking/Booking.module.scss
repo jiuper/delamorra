@@ -44,5 +44,9 @@
 
   .image{
     flex: 0 1 auto;
+
+    .img{
+      width: 100%;
+    }
   }
 }

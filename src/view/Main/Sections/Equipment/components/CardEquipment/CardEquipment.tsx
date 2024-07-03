@@ -6,15 +6,16 @@ import styles from "./CardEquipment.module.scss";
 
 const cx = cnBind.bind(styles);
 type CardEquipmentProps = {
-    src: string;
+    id: string;
     title: string;
     description: string;
+    pictureId: string;
 };
-export const CardEquipment = ({ src, title, description }: CardEquipmentProps) => {
+export const CardEquipment = ({ id, title, description, pictureId }: CardEquipmentProps) => {
     return (
         <div className={cx("card-equipment")}>
             <div className={cx("image-wrapper")}>
-                <CustomImage width={415} height={415} className={cx("image")} src={src} alt="equipment" />
+                <CustomImage width={415} height={415} className={cx("image")} src={pictureId} alt="equipment" />
             </div>
 
             <div className={cx("content")}>

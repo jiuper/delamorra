@@ -21,3 +21,9 @@ export type GetFavorDto = {
     pictureId: string;
     count: string;
 };
+export type GetEquipmentDto = {
+    id: string;
+    title: string;
+    description: string;
+    pictureId: string;
+};

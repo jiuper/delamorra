@@ -4,13 +4,15 @@
 
   .wrapper{
     display: flex;
-    gap: 165px;
+    justify-content: space-between;
 
     .form-content{
       padding: 60px 0;
       display: flex;
       flex-direction: column;
       gap: 30px;
+      max-width: 705px;
+      width: 100%;
 
       h2{
         font-weight: 400;
@@ -32,15 +34,11 @@
       }
     }
 
-    .form-image{
-      .image{
-        width: auto;
-      }
-    }
     .form{
       display: flex;
       flex-direction: column;
       gap: 10px;
+      font-family: 'ManropeRegular', sans-serif;
 
       .inputs{
         display: flex;
@@ -53,9 +51,15 @@
         .privacy{
           font-weight: 400;
           font-size: 14px;
-          line-height: 150%;
-          max-width: 347.5px;
-          width: 100%;
+          line-height: 140%;
+          flex: 0 1 50%;
+          color: #5B5857;
+          i{
+            color: #E76325;
+          }
+          .link{
+            color: #232120;
+          }
         }
         button{
           flex: 1 1 ;

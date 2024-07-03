@@ -13,10 +13,10 @@ const cx = cnBind.bind(styles);
 
 export const Equipment = () => {
     const cards = [
-        { title: "Godox Sk300II", description: "Комплект студийного света", src: ITEMONE },
-        { title: "Fotokvant BF-300B", description: "Светодиодный осветитель", src: ITEMTWO },
-        { title: "от 60х60см до 80х120см", description: "Софтбоксы", src: ITEMTHREE },
-        { title: "120 и 140см", description: "Октабоксы", src: ITEMFPUR },
+        { id: "1", title: "Godox Sk300II", description: "Комплект студийного света", pictureId: ITEMONE.src },
+        { id: "2", title: "Fotokvant BF-300B", description: "Светодиодный осветитель", pictureId: ITEMTWO.src },
+        { id: "3", title: "от 60х60см до 80х120см", description: "Софтбоксы", pictureId: ITEMTHREE.src },
+        { id: "4", title: "120 и 140см", description: "Октабоксы", pictureId: ITEMFPUR.src },
     ];
 
     return (
@@ -32,12 +32,7 @@ export const Equipment = () => {
                 </div>
                 <div className={cx("cards")}>
                     {cards.map((card) => (
-                        <CardEquipment
-                            key={card.title}
-                            src={card.src.src}
-                            title={card.title}
-                            description={card.description}
-                        />
+                        <CardEquipment key={card.id} {...card} />
                     ))}
                 </div>
             </div>

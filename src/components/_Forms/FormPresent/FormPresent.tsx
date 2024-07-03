@@ -31,9 +31,12 @@ export const FormPresent = () => {
                             <UIInputText type="text" label="Номер телефона" isFullWidth />
                         </div>
                         <div className={cx("buttons")}>
-                            <span className={cx("privacy")}>
-                                <i>*</i>Нажимая на кнопку вы соглашаетесь с Политикой конфиденциальности
-                            </span>
+                            <div className={cx("privacy")}>
+                                <i>*</i>Нажимая на кнопку вы соглашаетесь с{" "}
+                                <Link className={cx("link")} href="/">
+                                    Политикой конфиденциальности
+                                </Link>
+                            </div>
                             <Button mode="orange" type="submit" label="Получить подарок" iconButton />
                         </div>
                     </form>

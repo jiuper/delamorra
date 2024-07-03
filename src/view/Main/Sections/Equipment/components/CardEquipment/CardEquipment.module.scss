@@ -3,6 +3,7 @@
   flex-direction: column;
   gap: 25px;
   flex: 1 1;
+  align-items: center;
   cursor: pointer;
 
   .image-wrapper{
@@ -10,6 +11,10 @@
     justify-content: center;
     align-items: center;
     border: 1px solid #EAE7DC;
+
+    .image{
+      width: 100%;
+    }
   }
   .content{
     display: flex;

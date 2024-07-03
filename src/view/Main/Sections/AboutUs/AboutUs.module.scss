@@ -1,9 +1,15 @@
 .wrapper{
   display: flex;
+  flex-direction: column;
+  gap: 60px;
   margin-bottom: 180px;
-  justify-content: space-between;
-  gap: 35px;
 
+
+  .content-container{
+    justify-content: space-between;
+    gap: 35px;
+    display: flex;
+  }
   .image-container-top{
     display: flex;
     justify-content: center;
@@ -42,6 +48,35 @@
       line-height: 150%;
       text-align: center;
       max-width: 679px;
+    }
+  }
+
+  .cards{
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .card{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      border: 1px solid #EAE7DC;
+      gap: 30px;
+      height: 415px;
+      padding: 30px;
+      flex: 1 1;
+      .cards-image{
+        width: auto;
+      }
+      .cards-text{
+        height: 100%;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 140%;
+        display: flex;
+        align-items: flex-end;
+      }
     }
   }
 }
