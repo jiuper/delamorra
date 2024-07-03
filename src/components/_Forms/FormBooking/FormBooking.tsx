@@ -10,8 +10,8 @@ import { CustomImage } from "@/shared/ui/CustomImage";
 import styles from "./FormBooking.module.scss";
 
 const cx = cnBind.bind(styles);
-type Props = {};
-export const FormBooking = (props: Props) => {
+
+export const FormBooking = () => {
     return (
         <div className={cx("form-booking")}>
             <div className={cx("wrapper", "container")}>

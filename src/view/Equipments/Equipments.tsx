@@ -1,6 +1,8 @@
 import cnBind from "classnames/bind";
+import type { MenuItem } from "primereact/menuitem";
 
 import { FormPresent } from "@/components/_Forms/FormPresent";
+import { BreadCrumb } from "@/components/BreadCrumb";
 import type { GetEquipmentDto } from "@/entities";
 import { PageLayout } from "@/layouts/PageLayout";
 import { CardEquipment } from "@/view/Main/Sections/Equipment/components/CardEquipment";
@@ -12,8 +14,11 @@ type EquipmentsProps = {
     listEquipments: GetEquipmentDto[];
 };
 export const Equipments = ({ listEquipments }: EquipmentsProps) => {
+    const breadcrumbs: MenuItem[] = [{ label: "Оборудование" }];
+
     return (
         <PageLayout>
+            <BreadCrumb model={breadcrumbs} />
             <div className={cx("equipments")}>
                 <div className={cx("wrapper", "container")}>
                     <h1>Оборудование</h1>

@@ -5,66 +5,11 @@ export interface IRouting {
 }
 export const Routes = {
     HOME: "/",
-    INFORMATION: "/",
-    ADVANTAGES: "/contacts",
-    PEOPLE: "/people",
-    ASSORTIMENT: "#",
-    SERVICES: "#",
-    TRACINGPAPER: "/tracingpaper",
-
+    FILMIMG: "/filming",
+    FAVOR: "/favor",
+    EQUIPMENTS: "/equipments",
+    NEWS: "/news",
+    CONTACTS: "/contacts",
+    ABOUTUS: "/about-us",
+    PROMOTION: "/promotion",
 };
-export const ROUTING_LEVEL_ONE: IRouting[] = [
-    {
-        path: Routes.INFORMATION,
-        name: "Информация",
-        mode: false,
-    },
-    {
-        path: Routes.ADVANTAGES,
-        name: "Преимущества",
-        mode: false,
-    },
-    {
-        path: Routes.PEOPLE,
-        name: "Люди",
-        mode: false,
-    },
-    {
-        path: Routes.ASSORTIMENT,
-        name: "Ассортимент",
-        mode: true,
-    },
-    {
-        path: Routes.SERVICES,
-        name: "Услуги",
-        mode: false,
-    },
-];
-
-export const ROUTING_LEVEL_TWO: IRouting[] = [
-    {
-        path: Routes.INFORMATION,
-        name: "Калька",
-        mode: false,
-    },
-    {
-        path: Routes.ADVANTAGES,
-        name: "Ватман в листах",
-        mode: false,
-    },
-    {
-        path: Routes.PEOPLE,
-        name: "Бумага-крафт",
-        mode: false,
-    },
-    {
-        path: Routes.ASSORTIMENT,
-        name: "Подпергамент",
-        mode: true,
-    },
-    {
-        path: Routes.SERVICES,
-        name: "Для упаковки жировлагосодержа-щих продуктов",
-        mode: false,
-    },
-];

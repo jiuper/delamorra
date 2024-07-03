@@ -5,6 +5,9 @@
   flex: 1 1;
   align-items: center;
   cursor: pointer;
+  max-height: 507px;
+  overflow: hidden;
+  transition: max-height .3s ease-in-out;
 
   .image-wrapper{
     display: flex;
@@ -32,5 +35,12 @@
       line-height: 150%;
       color: #5B5857;
     }
+  }
+
+
+  &:hover {
+    max-height: 592px;
+    transition: max-height .3s ease-in-out;
+
   }
 }

@@ -1,8 +1,10 @@
+import { Routes } from "@/shared/constants/Routing";
+
 type NavbarTypeProps = { label: string; url?: string; items?: { label: string; url: string }[] }[];
 export const items: NavbarTypeProps = [
     {
         label: "Виды сьемок",
-        url: "/",
+        url: Routes.FILMIMG,
     },
 
     {
@@ -29,7 +31,7 @@ export const items: NavbarTypeProps = [
     {
         label: "Оборудование",
 
-        url: "/contacts",
+        url: Routes.EQUIPMENTS,
     },
     {
         label: "Наши работы",
@@ -37,10 +39,10 @@ export const items: NavbarTypeProps = [
     },
     {
         label: "О нас",
-        url: "/contacts",
+        url: Routes.ABOUTUS,
     },
     {
         label: "Акции",
-        url: "/contacts",
+        url: Routes.PROMOTION,
     },
 ];
