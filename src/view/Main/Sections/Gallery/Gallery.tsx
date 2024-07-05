@@ -17,7 +17,7 @@ export const Gallery = () => {
     const listImg = [IMGONE, IMGTWO, IMGTHREE, IMGSEVEN, IMGFOUR, IMGSIX, IMGFIVE];
 
     return (
-        <div className={cx("gallery")}>
+        <div className={cx("gallery")} id="works">
             <div className={cx("wrapper", "container")}>
                 <div className={cx("header")}>
                     <h2>Снято в Della Morra</h2>

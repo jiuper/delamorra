@@ -5,12 +5,13 @@ export interface IRouting {
 }
 export const Routes = {
     HOME: "/",
-    FILMIMG: "/filming",
+    FILMIMG: "#filmImg",
     FAVOR: "/favor",
     EQUIPMENTS: "/equipments",
     NEWS: "/news",
     CONTACTS: "/contacts",
-    ABOUTUS: "/about-us",
-    PROMOTION: "/promotion",
+    ABOUTUS: "#aboutUs",
+    PROMOTION: "#promotion",
     POLICY: "/policy",
+    WORKS: "#works",
 };

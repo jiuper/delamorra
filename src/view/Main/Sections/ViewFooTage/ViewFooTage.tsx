@@ -12,7 +12,7 @@ type ViewFooTageProps = {
 };
 export const ViewFooTage = ({ filming }: ViewFooTageProps) => {
     return (
-        <div className={cx("view-foo-tage")}>
+        <div className={cx("view-foo-tage")} id="filmImg">
             <div className={cx("wrapper", "container")}>
                 <div className={cx("header")}>
                     <h2>Виды сьемок</h2>

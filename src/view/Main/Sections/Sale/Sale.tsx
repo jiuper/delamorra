@@ -78,7 +78,7 @@ export const Sale = () => {
     };
 
     return (
-        <div className={cx("sale")}>
+        <div className={cx("sale")} id="promotion">
             <div className={cx("wrapper", "container")}>
                 <div className={cx("header")}>
                     <span className={cx("title")}>Скидки и акции</span>

@@ -69,9 +69,9 @@ export const Footer = () => {
                         )}
                         {!isMobile && (
                             <div className={cx("copyright")}>
-                                Разработан студией -{" "}
+                                Created by{" "}
                                 <Link className={cx("link")} href="https://levsha-web.ru/" target="_blank">
-                                    LEVSHA
+                                    Levsha
                                 </Link>
                             </div>
                         )}
@@ -82,9 +82,9 @@ export const Footer = () => {
                 </div>
                 {isMobile && (
                     <div className={cx("copyright")}>
-                        Разработан студией -{" "}
+                        Created by{" "}
                         <Link className={cx("link")} href="https://levsha-web.ru/" target="_blank">
-                            LEVSHA
+                            Levsha
                         </Link>
                     </div>
                 )}

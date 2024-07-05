@@ -21,7 +21,7 @@ export const AboutUs = () => {
     ];
 
     return (
-        <div className={cx("about-us")}>
+        <div className={cx("about-us")} id="aboutUs">
             <div className={cx("wrapper", "container")}>
                 <div className={cx("content-container")}>
                     <div className={cx("image-container-top")}>

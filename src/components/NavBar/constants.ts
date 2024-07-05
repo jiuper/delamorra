@@ -12,41 +12,41 @@ export const items: NavbarTypeProps = [
         items: [
             {
                 label: "Платья в аренду",
-                url: "/assortment/17826f6b-14de-4815-83d8-b092c7381946",
+                url: Routes.EQUIPMENTS,
             },
             {
                 label: "Аренда оборудования",
-                url: "/equipments",
+                url: Routes.EQUIPMENTS,
             },
             {
                 label: "Аренда реквизита",
-                url: "/assortment/8fa5219a-4da3-4c9e-8060-64b67bc1c0fa",
+                url: Routes.EQUIPMENTS,
             },
             {
                 label: "Ассистент на сьемку",
-                url: "/assortment/79ea5405-125a-4f7b-82a8-e1628870d920",
+                url: Routes.FAVOR,
             },
             {
                 label: "Аренда фотостудии",
-                url: "/favor",
+                url: Routes.FAVOR,
             },
         ],
     },
     {
-        label: "Оборудование",
+        label: "Акции",
 
-        url: Routes.EQUIPMENTS,
+        url: Routes.PROMOTION,
     },
     {
         label: "Наши работы",
-        url: "/contacts",
+        url: Routes.WORKS,
     },
     {
         label: "О нас",
         url: Routes.ABOUTUS,
     },
     {
-        label: "Акции",
-        url: Routes.PROMOTION,
+        label: "Контакты",
+        url: Routes.CONTACTS,
     },
 ];

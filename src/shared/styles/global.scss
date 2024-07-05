@@ -18,13 +18,16 @@
     font-weight: 1;
     font-style: normal;
 }
-
+html{
+    scroll-behavior: smooth;
+}
 body {
     margin: 0;
     padding: 0;
     width: 100%;
     font-family: "InterRegular", sans-serif;
     background: #F4F3EC;
+
 }
 
 h1,
