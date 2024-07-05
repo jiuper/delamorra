@@ -23,11 +23,25 @@
       font-weight: 400;
       font-size: 80px;
       line-height: 90%;
+
+    }
+    @include media-max(1300px){
+      align-items: center;
+      flex-direction: column;
+    }
+    @include media-max(720px){
+      align-items: flex-start;
+      h2 {
+        font-size: 32px;
+      }
     }
   }
   .cards{
     display: grid;
     grid-gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  @include media-max(720px){
+    margin-bottom: 80px;
   }
 }

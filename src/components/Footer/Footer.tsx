@@ -7,6 +7,7 @@ import { Logo } from "@/components/Logo";
 import { Navbar } from "@/components/NavBar";
 import PAYMENTS from "@/shared/assests/payments.png";
 import { Routes } from "@/shared/constants/Routing";
+import { useResizeContext } from "@/shared/context/WindowResizeProvider";
 import { CustomImage } from "@/shared/ui/CustomImage";
 
 import styles from "./Footer.module.scss";
@@ -14,6 +15,8 @@ import styles from "./Footer.module.scss";
 const cx = cnBind.bind(styles);
 
 export const Footer = () => {
+    const { isMobile } = useResizeContext();
+
     return (
         <footer className={cx("footer")}>
             <div className={cx("wrapper", "container")}>
@@ -33,15 +36,17 @@ export const Footer = () => {
                             <h3>Кадетская линия В.О., 5 к.2, лит. Д</h3>
                             <span>Della Morra Loft</span>
                         </div>
-                        <div className={cx("links")}>
-                            <Link className={cx("privacy")} href={Routes.POLICY}>
-                                Политика конфиденциальности
-                            </Link>
-                            <Link className={cx("link")} href={Routes.POLICY}>
-                                Условия использования
-                            </Link>
-                            <span>© Della Morra 2024</span>
-                        </div>
+                        {!isMobile && (
+                            <div className={cx("links")}>
+                                <Link className={cx("privacy")} href={Routes.POLICY}>
+                                    Политика конфиденциальности
+                                </Link>
+                                <Link className={cx("link")} href={Routes.POLICY}>
+                                    Условия использования
+                                </Link>
+                                <span>© Della Morra 2024</span>
+                            </div>
+                        )}
                     </div>
                     <div className={cx("footer-social")}>
                         <div className={cx("socials")}>
@@ -51,11 +56,38 @@ export const Footer = () => {
                                 </Link>
                             ))}
                         </div>
+                        {isMobile && (
+                            <div className={cx("links")}>
+                                <Link className={cx("privacy")} href={Routes.POLICY}>
+                                    Политика конфиденциальности
+                                </Link>
+                                <Link className={cx("link")} href={Routes.POLICY}>
+                                    Условия использования
+                                </Link>
+                                <span>© Della Morra 2024</span>
+                            </div>
+                        )}
+                        {!isMobile && (
+                            <div className={cx("copyright")}>
+                                Разработан студией -{" "}
+                                <Link className={cx("link")} href="https://levsha-web.ru/" target="_blank">
+                                    LEVSHA
+                                </Link>
+                            </div>
+                        )}
                         <div className={cx("socials")}>
                             <CustomImage src={PAYMENTS} alt="PAYMENTS" width={190} height={25} />
                         </div>
                     </div>
                 </div>
+                {isMobile && (
+                    <div className={cx("copyright")}>
+                        Разработан студией -{" "}
+                        <Link className={cx("link")} href="https://levsha-web.ru/" target="_blank">
+                            LEVSHA
+                        </Link>
+                    </div>
+                )}
             </div>
         </footer>
     );

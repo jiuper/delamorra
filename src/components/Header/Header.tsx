@@ -1,6 +1,7 @@
 import { useState } from "react";
 import cnBind from "classnames/bind";
 import Link from "next/link";
+import { Button } from "primereact/button";
 import { Sidebar } from "primereact/sidebar";
 
 import { Logo } from "@/components/Logo";
@@ -8,7 +9,6 @@ import { Navbar } from "@/components/NavBar";
 import TG from "@/shared/assests/icons/tg.png";
 import VK from "@/shared/assests/icons/vk.png";
 import WA from "@/shared/assests/icons/wa.png";
-import { Button } from "@/shared/ui/Button";
 import { CustomImage } from "@/shared/ui/CustomImage";
 
 import styles from "./Header.module.scss";
@@ -36,13 +36,13 @@ export const Header = () => {
         <header className={cx("header")}>
             <div className={cx("wrapper", "container")}>
                 <div className={cx("left")}>
+                    <Button className={cx("phone-link")} icon="pi pi-phone" />
                     <Logo />
                     <div className={cx("nav")}>
-                        <Navbar />
+                        <Navbar className={cx("navbar-header")} />
                         <Button
                             className={cx("sidebar-button")}
-                            mode="outlined"
-                            icon="pi pi-bars"
+                            icon="pi pi-pause"
                             onClick={() => setVisibleRight(true)}
                         />
                         <Sidebar
@@ -51,7 +51,34 @@ export const Header = () => {
                             visible={visibleRight}
                             onHide={() => setVisibleRight(false)}
                         >
-                            asd
+                            <div className={cx("sidebar-header")}>
+                                <Button
+                                    className={cx("phone-link")}
+                                    icon="pi pi-times"
+                                    onClick={() => setVisibleRight(false)}
+                                />
+                                <Logo />
+                                <Button className={cx("phone-link")} icon="pi pi-phone" />
+                            </div>
+                            <div className={cx("nav")}>
+                                <div className={cx("navbar-container")}>
+                                    <Navbar classNameItems={cx("navbar-items")} />
+                                </div>
+                            </div>
+                            <div className={cx("sidebar-right")}>
+                                <div className={cx("contacts")}>
+                                    <Link className={cx("email")} href="mailto:dellamorra5@gmail.com" target="_blank">
+                                        dellamorra5@gmail.com
+                                    </Link>
+                                </div>
+                                <div className={cx("socials")}>
+                                    {socialItems.map((item) => (
+                                        <Link href={item.url} target="_blank" className={cx("social")} key={item.url}>
+                                            <CustomImage src={item.icon} alt="WA" width={20} height={20} />
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
                         </Sidebar>
                     </div>
                 </div>

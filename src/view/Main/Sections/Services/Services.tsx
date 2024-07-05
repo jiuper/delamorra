@@ -50,7 +50,13 @@ export const Services = ({ favor }: ServicesProps) => {
                                     src={CARDWOMENONE}
                                     alt="women"
                                 />
-                                <CustomImage width={270} height={125} src={CARDWOMENTWO} alt="women" />
+                                <CustomImage
+                                    className={cx("image-last")}
+                                    width={270}
+                                    height={125}
+                                    src={CARDWOMENTWO}
+                                    alt="women"
+                                />
                             </div>
                         </div>
                     </div>

@@ -11,6 +11,7 @@ export type GetFilmingDto = {
     order: number;
     price: string;
     pictureId: string;
+    otherPrice: number;
 };
 
 export type GetFavorDto = {

@@ -11,7 +11,26 @@
   .content{
       display: grid;
       grid-gap: 20px;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     margin-bottom: 180px;
+  }
+  @include media-max(1100px){
+    h1{
+      font-size: 80px;
+    }
+
+  }
+  @include media-max(720px){
+    h1{
+      font-size: 60px;
+    }
+    .title{
+      font-size: 14px;
+    }
+  }
+  @include media-max(520px){
+    h1{
+      font-size: 48px;
+    }
   }
 }

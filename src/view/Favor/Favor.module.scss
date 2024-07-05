@@ -24,6 +24,26 @@
       font-size: 128px;
       line-height: 90%;
       color: #232120;
+      text-align: center;
+    }
+    @include media-max(1100px){
+      h1{
+        font-size: 80px;
+      }
+
+    }
+    @include media-max(720px){
+      h1{
+        font-size: 60px;
+      }
+      .title{
+        font-size: 14px;
+      }
+    }
+    @include media-max(520px){
+      h1{
+        font-size: 48px;
+      }
     }
   }
 
@@ -33,6 +53,12 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+
+    .card{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
     .buttons{
       display: flex;
       justify-content: center;
@@ -101,7 +127,9 @@
 
         }
       }
+
     }
+
     .next-icon,
     .prev-icon{
       width: 12px;
@@ -109,6 +137,14 @@
       path{
         stroke: #7E7C7A;
       }
+
+    }
+    @include media-max(720px){
+      [data-pc-section="previousbutton"],
+        [data-pc-section="nextbutton"]{
+          top: 100%;
+          bottom: inherit;
+        }
 
     }
   }
@@ -123,10 +159,22 @@
       line-height: 90%;
       color: #232120;
     }
+
+    @include media-max(720px){
+      margin-top: 20px;
+      gap: 30px;
+      h2{
+        font-size: 32px;
+      }
+    }
   }
   .cards{
     display: grid;
     grid-gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+
+  @include media-max(720px){
+    margin-bottom: 80px;
   }
 }

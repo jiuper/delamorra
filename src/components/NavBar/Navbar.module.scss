@@ -37,6 +37,15 @@
             align-items: center;
         }
     }
+    @include media-max(800px){
+        &{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        gap: 15px;
+            justify-items: center;
+    }
+    }
 
 }
 .subitems-wrapper{

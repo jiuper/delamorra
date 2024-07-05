@@ -11,7 +11,7 @@ import { CustomImage } from "@/shared/ui/CustomImage";
 import styles from "./Booking.module.scss";
 
 const cx = cnBind.bind(styles);
-const listImg = [ORANGEWOMEN, EMPTY, SERVICELAMP];
+
 export const Booking = () => {
     return (
         <div className={cx("booking")}>
@@ -22,7 +22,7 @@ export const Booking = () => {
                         <CustomImage src={GREYWOMEN} alt="GREYWOMEN" />
                     </div>
                     <div className={cx("text")}>
-                        <span>Комфортная фотостудия в самом сердце Санкт-Петербурга</span>
+                        <span className={cx("label")}>Комфортная фотостудия в самом сердце Санкт-Петербурга</span>
                         <Button mode="outlined" label="Забронировать зал" />
                     </div>
                     <div className={cx("photo")}>
@@ -30,11 +30,18 @@ export const Booking = () => {
                     </div>
                 </div>
                 <div className={cx("photos")}>
-                    {listImg.map((item, index) => (
-                        <div key={index} className={cx("image")}>
-                            <CustomImage className={cx("img")} src={item} alt="image" />
+                    <div className={cx("images")}>
+                        <div className={cx("image")}>
+                            <CustomImage className={cx("img")} src={ORANGEWOMEN} alt="ORANGEWOMEN" />
                         </div>
-                    ))}
+                        <div className={cx("image")}>
+                            <CustomImage className={cx("img")} src={EMPTY} alt="EMPTY" />
+                        </div>
+                    </div>
+
+                    <div className={cx("image")}>
+                        <CustomImage className={cx("img")} src={SERVICELAMP} alt="SERVICELAMP" />
+                    </div>
                 </div>
             </div>
         </div>

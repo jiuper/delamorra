@@ -33,6 +33,16 @@
                 font-family: "ManropeRegular", sans-serif;
             }
         }
+        @include media-max(720px){
+            h4{
+                font-size: 24px;
+            }
+            .savings{
+                span{
+                    font-size: 12px;
+                }
+            }
+        }
     }
     .body{
         display: flex;
@@ -50,7 +60,13 @@
             }
 
         }
-
+        @include media-max(720px){
+            .option{
+                span{
+                    font-size: 14px;
+                }
+            }
+        }
     }
     .footer{
         display: flex;
@@ -62,6 +78,15 @@
             font-size: 36px;
             line-height: 90%;
             color: #232120;
+        }
+
+        @include media-max(720px){
+            flex-direction: column;
+            justify-content: inherit;
+            align-items: inherit;
+            h4{
+                font-size: 24px;
+            }
         }
     }
 }

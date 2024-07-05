@@ -6,10 +6,10 @@ import { items } from "@/components/NavBar/constants";
 import styles from "./Navbar.module.scss";
 
 const cx = cnBind.bind(styles);
-export const Navbar = () => {
+export const Navbar = ({ className, classNameItems }: { className?: string; classNameItems?: string }) => {
     return (
-        <div className={cx("navbar")}>
-            <div className={cx("items")}>
+        <div className={cx("navbar", className)}>
+            <div className={cx("items", classNameItems)}>
                 {items.map((item) => (
                     <div key={item.label} className={cx("item")}>
                         {item.url ? (

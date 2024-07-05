@@ -25,51 +25,77 @@
       width: 736px;
       text-align: center;
     }
+
+    @include media-max(1300px){
+      align-items: center;
+      flex-direction: column;
+    }
+    @include media-max(720px){
+      h2 {
+        font-size: 32px;
+        width: 100%;
+      }
+    }
   }
 
-  .carousel-cards{
-    [data-pc-section="container"]{
+  .carousel-cards {
+    [data-pc-section="container"] {
       margin-bottom: 30px;
     }
-    [data-pc-section="itemscontainer"]{
+
+    [data-pc-section="itemscontainer"] {
       gap: 20px;
     }
-    [data-p-highlight="true"]{
-      [data-pc-section="indicatorbutton"]{
+
+    [data-p-highlight="true"] {
+      [data-pc-section="indicatorbutton"] {
         background: #1c1b1f;
       }
 
     }
-    [data-pc-section="indicators"]{
+
+    [data-pc-section="indicators"] {
       position: absolute;
       top: 100%;
       left: 43%;
       transform: translate(50%, 0);
-    }
-  [data-pc-section="previousbutton"]{
-    position: absolute;
-    border: 1px solid #EAE7DC;
-    width: 58px;
-    height: 58px;
-    border-radius: 0;
-    transform: rotate(180deg);
-    top: 100%;
+      @include media-max(1300px) {
+       &{
+         display: none;
+       }
 
-    &:hover,
-    &:focus,
-    &:active{
-      background: #1c1b1f;
+      }
 
-      .next-icon,
-      .prev-icon{
-        path{
-          stroke: #fff;
+        path {
+          stroke: #7E7C7A;
         }
 
       }
+    [data-pc-section="previousbutton"] {
+      position: absolute;
+      border: 1px solid #EAE7DC;
+      width: 58px;
+      height: 58px;
+      border-radius: 0;
+      transform: rotate(180deg);
+      top: 100%;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background: #1c1b1f;
+
+        .next-icon,
+        .prev-icon {
+          path {
+            stroke: #fff;
+          }
+
+        }
+      }
     }
-  }
-    [data-pc-section="nextbutton"]{
+
+    [data-pc-section="nextbutton"] {
       position: absolute;
       border: 1px solid #EAE7DC;
       width: 58px;
@@ -80,27 +106,28 @@
 
       &:hover,
       &:focus,
-      &:active{
+      &:active {
         background: #1c1b1f;
 
         .next-icon,
-        .prev-icon{
-          path{
+        .prev-icon {
+          path {
             stroke: #fff;
           }
 
         }
       }
     }
+
     .next-icon,
-    .prev-icon{
+    .prev-icon {
       width: 12px;
       height: 10px;
-      path{
-        stroke: #7E7C7A;
-      }
-
     }
-  }
 
+
+  }
+  @include media-max(720px) {
+    margin: 80px auto;
+  }
 }

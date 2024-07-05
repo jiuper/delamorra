@@ -60,6 +60,18 @@ export const Sale = () => {
             titleCount: "%",
         },
     ];
+    const responsiveOptions = [
+        {
+            breakpoint: "1301px",
+            numVisible: 2,
+            numScroll: 1,
+        },
+        {
+            breakpoint: "1300px",
+            numVisible: 1,
+            numScroll: 1,
+        },
+    ];
     // eslint-disable-next-line react/no-unstable-nested-components
     const CardSaleCarousel = ({ title, description, count, src, titleCount }: CardServiceMoreProps): JSX.Element => {
         return <CardSale title={title} description={description} count={count} src={src} titleCount={titleCount} />;
@@ -82,6 +94,7 @@ export const Sale = () => {
                         numVisible={2}
                         itemTemplate={CardSaleCarousel}
                         value={items}
+                        responsiveOptions={responsiveOptions}
                     />
                 </div>
             </div>

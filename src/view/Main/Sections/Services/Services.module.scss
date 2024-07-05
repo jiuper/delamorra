@@ -23,6 +23,22 @@
       font-size: 80px;
       line-height: 90%;
     }
+    @include media-max(1300px){
+      align-items: center;
+      flex-direction: column;
+    }
+    @include media-max(720px){
+      align-items: center;
+      h2 {
+        font-size: 32px;
+        text-align: center;
+      }
+    }
+    @include media-max(400px){
+      h2 {
+        width: 250px;
+      }
+    }
   }
 
   .cards{
@@ -35,6 +51,7 @@
       .card-short-wrapper{
         display: flex;
         gap: 165px;
+        width: 100%;
 
         .item{
           padding-top: 165px;
@@ -48,9 +65,45 @@
 
           .image{
             width: 124px;
+            @include media-max(720px){
+              width: 65px;
+              height: 65px;
+            }
           }
         }
+        @include media-max(720px){
+          flex-direction: column-reverse;
+          gap: 30px;
+          .item{
+            padding-top: 0;
+          }
+          .item-image{
+            align-items: inherit;
+            gap: 30px;
+            padding-bottom: 0;
+
+            .image-last{
+              width: 140px;
+              height: 65px;
+            }
+          }
+          .image{
+            margin-left: calc(100% - 124px) !important;
+
+          }
+
+        }
       }
+      @include media-max(1599px){
+        &{
+          flex-direction: column;
+          align-items: center;
+        .card-short-wrapper{
+          justify-content: center;
+        }
+        }
+      }
+
     }
 
     .card-wrapper-other{
@@ -75,7 +128,33 @@
             width: 124px;
           }
         }
+        @include media-max(720px){
+          width: 100%;
+          flex-direction: column-reverse;
+          .item-image{
+            width: 100%;
+          }
+          .image{
+            margin-right: calc(100% - 124px) !important;
+            width: 65px !important;
+            height: 65px;
+          }
+          .image-bottom{
+            width: 65px !important;
+            height: 65px;
+          }
+        }
+      }
+      @include media-max(1599px){
+        &{
+          flex-direction: column;
+          align-items: center;
+        }
       }
     }
+
+  }
+  @include media-max(720px){
+    margin-bottom: 80px;
   }
 }

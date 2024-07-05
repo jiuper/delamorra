@@ -30,8 +30,20 @@ export const Favor = ({ tariff }: FavorProps) => {
     const items = [BEDROOM, BATHROOM, BEDROOM, BATHROOM, BEDROOM, BATHROOM];
     // eslint-disable-next-line react/no-unstable-nested-components
     const CardSaleCarousel = ({ src }: { src: string }) => {
-        return <CustomImage width={850} height={387} src={src} alt="carusel" />;
+        return <CustomImage className={cx("card")} width={850} height={387} src={src} alt="carusel" />;
     };
+    const responsiveOptions = [
+        {
+            breakpoint: "1301px",
+            numVisible: 2,
+            numScroll: 1,
+        },
+        {
+            breakpoint: "1300px",
+            numVisible: 1,
+            numScroll: 1,
+        },
+    ];
 
     return (
         <PageLayout>
@@ -47,8 +59,8 @@ export const Favor = ({ tariff }: FavorProps) => {
                 </div>
                 <div className={cx("carousel-cards")}>
                     <div className={cx("buttons")}>
-                        <Button mode="outlined" label="Забронировать зал" />
-                        <Button onClick={onOpenModal} mode="outlined" label="Подробнее" />
+                        <Button mode="outlined" label="Забронировать" />
+                        <Button onClick={onOpenModal} mode="outlined" iconButton label="Подробнее" />
                     </div>
 
                     <Carousel
@@ -59,6 +71,7 @@ export const Favor = ({ tariff }: FavorProps) => {
                         numVisible={2}
                         itemTemplate={CardSaleCarousel}
                         value={items}
+                        responsiveOptions={responsiveOptions}
                     />
                 </div>
                 <div className={cx("tariffs")}>
