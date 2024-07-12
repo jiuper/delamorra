@@ -1,6 +1,7 @@
 import { useState } from "react";
 import cnBind from "classnames/bind";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { Button } from "primereact/button";
 import { Sidebar } from "primereact/sidebar";
 
@@ -31,12 +32,17 @@ export const socialItems = [
 
 export const Header = () => {
     const [visibleRight, setVisibleRight] = useState(false);
+    const router = useRouter();
 
     return (
         <header className={cx("header")}>
             <div className={cx("wrapper", "container")}>
                 <div className={cx("left")}>
-                    <Button className={cx("phone-link")} icon="pi pi-phone" />
+                    <Button
+                        className={cx("phone-link")}
+                        onClick={() => router.push("tel:+79217951988")}
+                        icon="pi pi-phone"
+                    />
                     <Logo />
                     <div className={cx("nav")}>
                         <Navbar className={cx("navbar-header")} />
@@ -58,7 +64,11 @@ export const Header = () => {
                                     onClick={() => setVisibleRight(false)}
                                 />
                                 <Logo />
-                                <Button className={cx("phone-link")} icon="pi pi-phone" />
+                                <Button
+                                    onClick={() => router.push("tel:+79217951988")}
+                                    className={cx("phone-link")}
+                                    icon="pi pi-phone"
+                                />
                             </div>
                             <div className={cx("nav")}>
                                 <div className={cx("navbar-container")}>

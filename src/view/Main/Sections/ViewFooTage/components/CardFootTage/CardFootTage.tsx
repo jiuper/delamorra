@@ -11,7 +11,7 @@ type Props = GetFilmingDto & {
     className?: string;
     src: string;
 };
-export const CardFootTage = ({ className, title, order, price, src, description, otherPrice }: Props) => {
+export const CardFootTage = ({ className, title, price, src, description, otherPrice }: Props) => {
     return (
         <div className={cx("card-foot", className)}>
             <CustomImage className={cx("image")} width={850} height={544} src={src} alt={title} />

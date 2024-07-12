@@ -21,7 +21,7 @@ export const Services = ({ favor }: ServicesProps) => {
                 <div className={cx("header")}>
                     <span className={cx("title")}>услуги</span>
                     <h2>Услуги студии Della Morra</h2>
-                    <Button mode="empty-button" label="Смотреть все" />
+                    <Button mode="empty-button" label="Смотреть все" style={{ opacity: 0, pointerEvents: "none" }} />
                 </div>
                 <div className={cx("cards")}>
                     <div className={cx("card-wrapper-item")}>

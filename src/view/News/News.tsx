@@ -2,16 +2,16 @@ import cnBind from "classnames/bind";
 import type { MenuItem } from "primereact/menuitem";
 
 import { BreadCrumb } from "@/components/BreadCrumb";
+import type { GetPromotionDto } from "@/entities";
 import { PageLayout } from "@/layouts/PageLayout";
-import PHOTO from "@/shared/assests/black-canon-dslr-camera-beside-camera-lens-ny6tO4ItOEY.png";
 import { CustomImage } from "@/shared/ui/CustomImage";
 
 import styles from "./News.module.scss";
 
 const cx = cnBind.bind(styles);
 
-export const News = () => {
-    const breadcrumbs: MenuItem[] = [{ label: "Новости" }];
+export const News = ({ promotion }: { promotion: GetPromotionDto }) => {
+    const breadcrumbs: MenuItem[] = [{ label: "Акции" }];
 
     return (
         <PageLayout>
@@ -53,16 +53,15 @@ export const News = () => {
                                 <span>Время чтения</span>
                             </div>
                         </div>
-                        <h2>Студийные источники света: как использовать разные виды оборудования</h2>
-                        <p>
-                            Солнечный свет довольно просто задействовать в создании фото и видео, однако в зависимости
-                            от места, погодных условий и времени суток он может создавать совершенно непредсказуемый
-                            оттенок и уровень контрастности. Обрести полный контроль над процессом съёмки в студии
-                            помогают искусственные источники света. Конечно, с ними связан ряд сложностей: высокие цены,
-                            особенности транспортировки и прочие неудобства.
-                        </p>
+                        <h2>{promotion.title}</h2>
+                        <p>{promotion.description}</p>
                     </div>
-                    <CustomImage src={PHOTO} alt="PHOTO" />
+                    <CustomImage
+                        width={1720}
+                        height={600}
+                        src={`https://photo-studio-api.onrender.com/picture/${promotion.pictureId}`}
+                        alt="PHOTO"
+                    />
                 </div>
             </div>
         </PageLayout>

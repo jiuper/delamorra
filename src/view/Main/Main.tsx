@@ -1,6 +1,6 @@
 import { FormBooking } from "@/components/_Forms/FormBooking";
 import { FormPresent } from "@/components/_Forms/FormPresent";
-import type { GetFavorDto, GetFilmingDto } from "@/entities";
+import type { GetFavorDto, GetFilmingDto, GetPromotionDto } from "@/entities";
 import { PageLayout } from "@/layouts/PageLayout";
 import { AboutStudio } from "@/view/Main/Sections/AboutStudio";
 import { AboutUs } from "@/view/Main/Sections/AboutUs";
@@ -14,9 +14,10 @@ import { ViewFooTage } from "@/view/Main/Sections/ViewFooTage";
 type MainProps = {
     filming: GetFilmingDto[];
     favor: GetFavorDto[];
+    promotion: GetPromotionDto[];
 };
 
-export const Main = ({ filming, favor }: MainProps) => {
+export const Main = ({ filming, favor, promotion }: MainProps) => {
     return (
         <PageLayout>
             <Booking />
@@ -25,7 +26,7 @@ export const Main = ({ filming, favor }: MainProps) => {
             <Equipment />
             <AboutStudio />
             <FormPresent />
-            <Sale />
+            <Sale promotion={promotion} />
             <AboutUs />
             <FormBooking />
             <Gallery />

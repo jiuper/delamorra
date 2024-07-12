@@ -1,7 +1,7 @@
-export enum PictureType {
-    MAIN,
-    TEXTURE,
-    OTHER,
+export enum EquipmentTypes {
+    DRESS = "DRESS",
+    EQUIPMENT = "EQUIPMENT",
+    REQUISITE = "REQUISITE",
 }
 
 export type GetFilmingDto = {
@@ -9,7 +9,7 @@ export type GetFilmingDto = {
     title: string;
     description: string;
     order: number;
-    price: string;
+    price: number;
     pictureId: string;
     otherPrice: number;
 };
@@ -26,6 +26,7 @@ export type GetEquipmentDto = {
     id: string;
     title: string;
     description: string;
+    type: EquipmentTypes;
     pictureId: string;
 };
 
@@ -35,4 +36,11 @@ export type GetTariffDto = {
     savings: number;
     options: string[];
     price: number;
+};
+export type GetPromotionDto = {
+    id: string;
+    title: string;
+    description: string;
+    savings: number;
+    pictureId: string;
 };

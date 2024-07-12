@@ -1,4 +1,5 @@
 import cnBind from "classnames/bind";
+import { useRouter } from "next/router";
 
 import { CustomImage } from "@/shared/ui/CustomImage";
 
@@ -6,17 +7,25 @@ import styles from "./CardSale.module.scss";
 
 const cx = cnBind.bind(styles);
 export type CardServiceMoreProps = {
-    src: string;
-    count: number;
-    titleCount: string;
+    pictureId: string;
+    savings: number;
+    id: string;
     title: string;
     description: string;
 };
-export const CardSale = ({ src, count, title, description, titleCount }: CardServiceMoreProps) => {
+export const CardSale = ({ pictureId, savings, title, description, id }: CardServiceMoreProps) => {
+    const router = useRouter();
+
     return (
-        <div className={cx("card-more")}>
+        <div className={cx("card-more")} onClick={() => router.push(`/news/${id}`)}>
             <div className={cx("image-wrapper")}>
-                <CustomImage className={cx("image")} width={385} height={385} src={src} alt="service" />
+                <CustomImage
+                    className={cx("image")}
+                    width={385}
+                    height={385}
+                    src={`https://photo-studio-api.onrender.com/picture/${pictureId}`}
+                    alt="service"
+                />
             </div>
 
             <div className={cx("info")}>
@@ -28,7 +37,7 @@ export const CardSale = ({ src, count, title, description, titleCount }: CardSer
                                 fill="#E76325"
                             />
                         </svg>
-                        {count}&nbsp;{titleCount}
+                        -{savings}&nbsp;%
                     </span>
                 </div>
 

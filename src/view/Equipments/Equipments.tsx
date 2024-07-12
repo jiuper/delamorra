@@ -12,9 +12,11 @@ import styles from "./Equipments.module.scss";
 const cx = cnBind.bind(styles);
 type EquipmentsProps = {
     listEquipments: GetEquipmentDto[];
+    type: string;
 };
-export const Equipments = ({ listEquipments }: EquipmentsProps) => {
+export const Equipments = ({ listEquipments, type }: EquipmentsProps) => {
     const breadcrumbs: MenuItem[] = [{ label: "Оборудование" }];
+    const filterListObjects = listEquipments.filter((el) => el.type === type);
 
     return (
         <PageLayout>
@@ -23,7 +25,7 @@ export const Equipments = ({ listEquipments }: EquipmentsProps) => {
                 <div className={cx("wrapper", "container")}>
                     <h1>Оборудование</h1>
                     <div className={cx("content")}>
-                        {listEquipments.map((el) => (
+                        {filterListObjects.map((el) => (
                             <CardEquipment
                                 key={el.id}
                                 {...el}

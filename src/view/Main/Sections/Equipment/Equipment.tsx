@@ -1,6 +1,7 @@
 import cnBind from "classnames/bind";
 import { useRouter } from "next/router";
 
+import { EquipmentTypes } from "@/entities";
 import ITEMFPUR from "@/shared/assests/item-four.png";
 import ITEMONE from "@/shared/assests/item-one.png";
 import ITEMTHREE from "@/shared/assests/item-three.png";
@@ -31,7 +32,11 @@ export const Equipment = () => {
                         В нашей студии есть все необходимое оборудование для проведения профессиональных фото- и
                         видеосъемок
                     </span>
-                    <Button onClick={() => router.push(Routes.EQUIPMENTS)} mode="empty-button" label="Смотреть все" />
+                    <Button
+                        onClick={() => router.push(`${`${Routes.EQUIPMENTS}/${EquipmentTypes.EQUIPMENT}`}`)}
+                        mode="empty-button"
+                        label="Смотреть все"
+                    />
                 </div>
                 <div className={cx("cards")}>
                     {cards.map((card) => (
