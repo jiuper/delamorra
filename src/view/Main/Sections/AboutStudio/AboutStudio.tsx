@@ -1,4 +1,5 @@
 import cnBind from "classnames/bind";
+import { useRouter } from "next/router";
 
 import STUDIOFOUR from "@/shared/assests/studio-four.png";
 import STUDIOONE from "@/shared/assests/studio-one.png";
@@ -12,6 +13,7 @@ import styles from "./AboutStudio.module.scss";
 const cx = cnBind.bind(styles);
 
 export const AboutStudio = () => {
+    const router = useRouter();
     const studioList = [
         { src: STUDIOONE, text: "Семейных фотосессий" },
         { src: STUDIOTWO, text: "Индивидуальных портретов" },
@@ -28,11 +30,19 @@ export const AboutStudio = () => {
             <div className={cx("wrapper", "container")}>
                 <div className={cx("header")}>
                     <h2>Для чего подходит студия?</h2>
-                    <Button mode="outlined" label="Забронировать" />
+                    <Button
+                        onClick={() =>
+                            router.push(
+                                "https://appevent.ru/widget/landing?widget_key=116a292ebe50d796e2310e659871f438",
+                            )
+                        }
+                        mode="outlined"
+                        label="Забронировать"
+                    />
                 </div>
                 <div className={cx("cards")}>
-                    {studioList.map((el) => (
-                        <div key={el.src.src} className={cx("content")}>
+                    {studioList.map((el, i) => (
+                        <div key={i} className={cx("content")}>
                             <div className={cx("image-wrapper")}>
                                 <CustomImage
                                     className={cx("image")}

@@ -151,6 +151,11 @@
       }
     }
   }
+  .step-three{
+    .image{
+      width: 100%;
+    }
+  }
   @include media-max(1440px){
     .step-three{
       img{

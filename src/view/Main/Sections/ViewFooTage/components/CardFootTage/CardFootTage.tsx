@@ -10,8 +10,9 @@ const cx = cnBind.bind(styles);
 type Props = GetFilmingDto & {
     className?: string;
     src: string;
+    onClick?: () => void;
 };
-export const CardFootTage = ({ className, title, price, src, description, otherPrice }: Props) => {
+export const CardFootTage = ({ className, title, price, src, description, otherPrice, onClick }: Props) => {
     return (
         <div className={cx("card-foot", className)}>
             <CustomImage className={cx("image")} width={850} height={544} src={src} alt={title} />
@@ -44,7 +45,7 @@ export const CardFootTage = ({ className, title, price, src, description, otherP
                         {otherPrice && <span className={cx("other-price")}>Выездная +{otherPrice} ₽ </span>}
                     </div>
 
-                    <Button mode="outlined" label="Хочу!" />
+                    <Button mode="outlined" label="Хочу!" onClick={onClick} />
                 </div>
             </div>
         </div>

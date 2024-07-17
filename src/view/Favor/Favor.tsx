@@ -1,4 +1,5 @@
 import cnBind from "classnames/bind";
+import { useRouter } from "next/router";
 import { Carousel } from "primereact/carousel";
 import type { MenuItem } from "primereact/menuitem";
 
@@ -25,6 +26,7 @@ type FavorProps = {
     tariff: GetTariffDto[];
 };
 export const Favor = ({ tariff }: FavorProps) => {
+    const router = useRouter();
     const [isModal, onOpenModal, onCloseModal] = useBooleanState(false);
     const breadcrumbs: MenuItem[] = [{ label: "Аренда фотостудии" }];
     const items = [BEDROOM, BATHROOM, BEDROOM, BATHROOM, BEDROOM, BATHROOM];
@@ -59,7 +61,15 @@ export const Favor = ({ tariff }: FavorProps) => {
                 </div>
                 <div className={cx("carousel-cards")}>
                     <div className={cx("buttons")}>
-                        <Button mode="outlined" label="Забронировать" />
+                        <Button
+                            mode="outlined"
+                            label="Забронировать"
+                            onClick={() =>
+                                router.push(
+                                    "https://appevent.ru/widget/landing?widget_key=116a292ebe50d796e2310e659871f438",
+                                )
+                            }
+                        />
                         <Button onClick={onOpenModal} mode="outlined" label="Подробнее" />
                     </div>
 

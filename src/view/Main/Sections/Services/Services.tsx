@@ -20,7 +20,6 @@ const cx = cnBind.bind(styles);
 type ServicesProps = { favor: GetFavorDto[]; equipments: GetEquipmentDto[] };
 export const Services = ({ favor, equipments }: ServicesProps) => {
     const router = useRouter();
-    console.log(favor);
 
     return (
         <div className={cx("services")}>
@@ -35,7 +34,7 @@ export const Services = ({ favor, equipments }: ServicesProps) => {
                         <CardServiceMore
                             count={equipments.filter((el) => el.type === EquipmentTypes.DRESS).length}
                             titleCount="платьев"
-                            src={`${API_BASE}/${favor[0]?.pictureId}`}
+                            src={`${API_BASE}/picture/${favor[0]?.pictureId}`}
                             title="Платья в аренду"
                             description="У нас много одежды для ваших сьемок"
                             onClick={() => router.push(`${`${Routes.EQUIPMENTS}/${EquipmentTypes.DRESS}`}`)}

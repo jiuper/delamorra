@@ -1,7 +1,9 @@
 import cnBind from "classnames/bind";
 
+import { ModalCallback } from "@/components/_Modals/ModalCallback";
 import type { GetFilmingDto } from "@/entities";
 import { API_BASE } from "@/shared/constants/private";
+import { useBooleanState } from "@/shared/hooks";
 import { CardFootTage } from "@/view/Main/Sections/ViewFooTage/components/CardFootTage";
 
 import styles from "./ViewFooTage.module.scss";
@@ -11,6 +13,8 @@ type ViewFooTageProps = {
     filming: GetFilmingDto[];
 };
 export const ViewFooTage = ({ filming }: ViewFooTageProps) => {
+    const [isModal, onOpenModal, onCloseModal] = useBooleanState(false);
+
     return (
         <div className={cx("view-foo-tage")} id="filmImg">
             <div className={cx("wrapper", "container")}>
@@ -19,10 +23,16 @@ export const ViewFooTage = ({ filming }: ViewFooTageProps) => {
                 </div>
                 <div className={cx("cards")}>
                     {filming.map((el) => (
-                        <CardFootTage key={el.id} src={`${API_BASE}/picture/${el.pictureId}`} {...el} />
+                        <CardFootTage
+                            onClick={onOpenModal}
+                            key={el.id}
+                            src={`${API_BASE}/picture/${el.pictureId}`}
+                            {...el}
+                        />
                     ))}
                 </div>
             </div>
+            <ModalCallback onClose={onCloseModal} isOpen={isModal} />
         </div>
     );
 };

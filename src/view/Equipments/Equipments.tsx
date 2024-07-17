@@ -2,11 +2,13 @@ import cnBind from "classnames/bind";
 import type { MenuItem } from "primereact/menuitem";
 
 import { FormPresent } from "@/components/_Forms/FormPresent";
+import { ModalCallback } from "@/components/_Modals/ModalCallback";
 import { BreadCrumb } from "@/components/BreadCrumb";
 import type { GetEquipmentDto } from "@/entities";
 import { EquipmentTypes } from "@/entities";
 import { PageLayout } from "@/layouts/PageLayout";
 import { API_BASE } from "@/shared/constants/private";
+import { useBooleanState } from "@/shared/hooks";
 import { CardEquipment } from "@/view/Main/Sections/Equipment/components/CardEquipment";
 
 import styles from "./Equipments.module.scss";
@@ -24,6 +26,7 @@ export const Equipments = ({ listEquipments, type }: EquipmentsProps) => {
     };
     const breadcrumbs: MenuItem[] = [{ label: path[type] }];
     const filterListObjects = listEquipments.filter((el) => el.type === type);
+    const [isModal, onOpenModal, onCloseModal] = useBooleanState(false);
 
     return (
         <PageLayout>
@@ -33,11 +36,17 @@ export const Equipments = ({ listEquipments, type }: EquipmentsProps) => {
                     <h1>Оборудование</h1>
                     <div className={cx("content")}>
                         {filterListObjects.map((el) => (
-                            <CardEquipment key={el.id} {...el} pictureId={`${API_BASE}/picture/${el.pictureId}`} />
+                            <CardEquipment
+                                onClick={onOpenModal}
+                                key={el.id}
+                                {...el}
+                                pictureId={`${API_BASE}/picture/${el.pictureId}`}
+                            />
                         ))}
                     </div>
                 </div>
                 <FormPresent />
+                <ModalCallback onClose={onCloseModal} isOpen={isModal} />
             </div>
         </PageLayout>
     );

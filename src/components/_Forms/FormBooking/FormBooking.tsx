@@ -67,7 +67,7 @@ export const FormBooking = () => {
                         </div>
                     </div>
                     <div className={cx("step-three")}>
-                        <CustomImage src={FORMBOOKING} alt="form-booking" />
+                        <CustomImage className={cx("image")} src={FORMBOOKING} alt="form-booking" />
                     </div>
                 </form>
             </div>

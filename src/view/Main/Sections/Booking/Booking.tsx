@@ -29,7 +29,7 @@ export const Booking = () => {
                         <Button
                             onClick={() =>
                                 router.push(
-                                    "https://appevent.ru/widget/landing?widget_key=5a7075ef8d8f0fbb5381561c1f7934e9",
+                                    "https://appevent.ru/widget/landing?widget_key=116a292ebe50d796e2310e659871f438",
                                 )
                             }
                             mode="outlined"

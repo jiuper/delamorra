@@ -31,6 +31,7 @@ export const ModalCallback = ({ onClose, isOpen, title = "Обратный зв�
                 body: JSON.stringify(values),
             }).then((res) => res.ok);
             formik.resetForm();
+            onClose();
         },
         validationSchema: Yup.object({
             name: Yup.string().required(),
