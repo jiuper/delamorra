@@ -11,7 +11,7 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: process.env.PROTOCOL_API,
+        protocol: process.env.NEXT_PUBLIC_PROTOCOL_API,
         hostname:"**",
         port: "",
         pathname: "**",
