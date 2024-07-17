@@ -7,6 +7,7 @@ import { Dropdown } from "primereact/dropdown";
 import { InputNumber } from "primereact/inputnumber";
 
 import type { GetPromotionDto } from "@/entities";
+import { API_BASE } from "@/shared/constants/private";
 import { Button } from "@/shared/ui/Button";
 import { CustomImage } from "@/shared/ui/CustomImage";
 import { TextField } from "@/shared/ui/TextField";
@@ -137,7 +138,7 @@ export const AdminNews = ({ promotion, isEdit }: Props) => {
                             width={400}
                             height={250}
                             className={cx("image")}
-                            src={`https://photo-studio-api.onrender.com/picture/${data[0].pictureId ?? "0"}`}
+                            src={`${API_BASE}/picture/${data[0].pictureId ?? "0"}`}
                             alt="deletePhoto"
                         />
                     </div>

@@ -1,6 +1,7 @@
 import cnBind from "classnames/bind";
 import { useRouter } from "next/router";
 
+import { API_BASE } from "@/shared/constants/private";
 import { CustomImage } from "@/shared/ui/CustomImage";
 
 import styles from "./CardSale.module.scss";
@@ -23,7 +24,7 @@ export const CardSale = ({ pictureId, savings, title, description, id }: CardSer
                     className={cx("image")}
                     width={385}
                     height={385}
-                    src={`https://photo-studio-api.onrender.com/picture/${pictureId}`}
+                    src={`${API_BASE}/picture/${pictureId}`}
                     alt="service"
                 />
             </div>

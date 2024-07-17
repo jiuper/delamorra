@@ -60,7 +60,7 @@ export const Favor = ({ tariff }: FavorProps) => {
                 <div className={cx("carousel-cards")}>
                     <div className={cx("buttons")}>
                         <Button mode="outlined" label="Забронировать" />
-                        <Button onClick={onOpenModal} mode="outlined" iconButton label="Подробнее" />
+                        <Button onClick={onOpenModal} mode="outlined" label="Подробнее" />
                     </div>
 
                     <Carousel
@@ -83,7 +83,7 @@ export const Favor = ({ tariff }: FavorProps) => {
                     </div>
                 </div>
             </div>
-            <Equipment />
+            <Equipment equipments={[]} />
             <AboutStudio />
             <FormBooking />
             <Gallery />

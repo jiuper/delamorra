@@ -11,8 +11,9 @@ type CardEquipmentProps = {
     title: string;
     description: string;
     pictureId: string;
+    onClick?: () => void;
 };
-export const CardEquipment = ({ id, title, description, pictureId }: CardEquipmentProps) => {
+export const CardEquipment = ({ id, title, description, pictureId, onClick }: CardEquipmentProps) => {
     return (
         <div className={cx("card-equipment")}>
             <div className={cx("image-wrapper")}>
@@ -23,7 +24,7 @@ export const CardEquipment = ({ id, title, description, pictureId }: CardEquipme
                 <span className={cx("title")}>{title}</span>
                 <span className={cx("description")}>{description}</span>
             </div>
-            <Button className={cx("button-wrapper")} mode="outlined" label="Забронировать" />
+            <Button onClick={onClick} className={cx("button-wrapper")} mode="outlined" label="Забронировать" />
         </div>
     );
 };

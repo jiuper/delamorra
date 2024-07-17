@@ -3,6 +3,7 @@ import Link from "next/link";
 import { InputTextarea } from "primereact/inputtextarea";
 
 import FORMBOOKING from "@/shared/assests/form-booking.png";
+import { Routes } from "@/shared/constants/Routing";
 import { UIInputText } from "@/shared/ui/_InputText/InputText";
 import { Button } from "@/shared/ui/Button";
 import { CustomImage } from "@/shared/ui/CustomImage";
@@ -51,7 +52,7 @@ export const FormBooking = () => {
                             <div className={cx("buttons")}>
                                 <div className={cx("privacy")}>
                                     <i>*</i>Нажимая на кнопку вы соглашаетесь с{" "}
-                                    <Link className={cx("link")} href="/">
+                                    <Link className={cx("link")} href={Routes.POLICY}>
                                         Политикой конфиденциальности
                                     </Link>
                                 </div>

@@ -12,8 +12,9 @@ type CardServiceMoreProps = {
     titleCount: string;
     title: string;
     description: string;
+    onClick?: () => void;
 };
-export const CardServiceMore = ({ src, count, title, description, titleCount }: CardServiceMoreProps) => {
+export const CardServiceMore = ({ src, count, title, description, titleCount, onClick }: CardServiceMoreProps) => {
     return (
         <div className={cx("card-more")}>
             <div className={cx("image-wrapper")}>
@@ -27,7 +28,7 @@ export const CardServiceMore = ({ src, count, title, description, titleCount }: 
                 <div className={cx("title-wrapper")}>
                     <span className={cx("title")}>{title}</span>
                     <span className={cx("description")}>{description}</span>
-                    <Button mode="empty-button" label="Узнать больше" />
+                    <Button onClick={onClick} mode="empty-button" label="Узнать больше" />
                 </div>
             </div>
         </div>

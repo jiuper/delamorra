@@ -1,4 +1,5 @@
 import cnBind from "classnames/bind";
+import { useRouter } from "next/router";
 
 import EMPTY from "@/shared/assests/empty.png";
 import GREYWOMEN from "@/shared/assests/gray-women.png";
@@ -13,6 +14,8 @@ import styles from "./Booking.module.scss";
 const cx = cnBind.bind(styles);
 
 export const Booking = () => {
+    const router = useRouter();
+
     return (
         <div className={cx("booking")}>
             <div className={cx("wrapper", "container")}>
@@ -23,7 +26,15 @@ export const Booking = () => {
                     </div>
                     <div className={cx("text")}>
                         <span className={cx("label")}>Комфортная фотостудия в самом сердце Санкт-Петербурга</span>
-                        <Button mode="outlined" label="Забронировать зал" />
+                        <Button
+                            onClick={() =>
+                                router.push(
+                                    "https://appevent.ru/widget/landing?widget_key=5a7075ef8d8f0fbb5381561c1f7934e9",
+                                )
+                            }
+                            mode="outlined"
+                            label="Забронировать зал"
+                        />
                     </div>
                     <div className={cx("photo")}>
                         <CustomImage src={PHOTO} alt="PHOTO" />

@@ -1,6 +1,7 @@
 import cnBind from "classnames/bind";
 
 import type { GetFilmingDto } from "@/entities";
+import { API_BASE } from "@/shared/constants/private";
 import { CardFootTage } from "@/view/Main/Sections/ViewFooTage/components/CardFootTage";
 
 import styles from "./ViewFooTage.module.scss";
@@ -18,11 +19,7 @@ export const ViewFooTage = ({ filming }: ViewFooTageProps) => {
                 </div>
                 <div className={cx("cards")}>
                     {filming.map((el) => (
-                        <CardFootTage
-                            key={el.id}
-                            src={`https://photo-studio-api.onrender.com/picture/${el.pictureId}`}
-                            {...el}
-                        />
+                        <CardFootTage key={el.id} src={`${API_BASE}/picture/${el.pictureId}`} {...el} />
                     ))}
                 </div>
             </div>

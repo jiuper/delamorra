@@ -4,7 +4,9 @@ import type { MenuItem } from "primereact/menuitem";
 import { FormPresent } from "@/components/_Forms/FormPresent";
 import { BreadCrumb } from "@/components/BreadCrumb";
 import type { GetEquipmentDto } from "@/entities";
+import { EquipmentTypes } from "@/entities";
 import { PageLayout } from "@/layouts/PageLayout";
+import { API_BASE } from "@/shared/constants/private";
 import { CardEquipment } from "@/view/Main/Sections/Equipment/components/CardEquipment";
 
 import styles from "./Equipments.module.scss";
@@ -15,7 +17,12 @@ type EquipmentsProps = {
     type: string;
 };
 export const Equipments = ({ listEquipments, type }: EquipmentsProps) => {
-    const breadcrumbs: MenuItem[] = [{ label: "Оборудование" }];
+    const path: Record<string, string> = {
+        [EquipmentTypes.DRESS]: "Платья",
+        [EquipmentTypes.EQUIPMENT]: "Оборудование",
+        [EquipmentTypes.REQUISITE]: "Реквизит",
+    };
+    const breadcrumbs: MenuItem[] = [{ label: path[type] }];
     const filterListObjects = listEquipments.filter((el) => el.type === type);
 
     return (
@@ -26,11 +33,7 @@ export const Equipments = ({ listEquipments, type }: EquipmentsProps) => {
                     <h1>Оборудование</h1>
                     <div className={cx("content")}>
                         {filterListObjects.map((el) => (
-                            <CardEquipment
-                                key={el.id}
-                                {...el}
-                                pictureId={`https://photo-studio-api.onrender.com/picture/${el.pictureId}`}
-                            />
+                            <CardEquipment key={el.id} {...el} pictureId={`${API_BASE}/picture/${el.pictureId}`} />
                         ))}
                     </div>
                 </div>

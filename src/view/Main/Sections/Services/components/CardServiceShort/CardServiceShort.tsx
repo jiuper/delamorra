@@ -12,8 +12,9 @@ type CardServiceShortProps = {
     titleCount?: string;
     title: string;
     description: string;
+    onClick?: () => void;
 };
-export const CardServiceShort = ({ count, titleCount, src, title, description }: CardServiceShortProps) => {
+export const CardServiceShort = ({ count, titleCount, src, title, description, onClick }: CardServiceShortProps) => {
     return (
         <div className={cx("card-short")}>
             <div className={cx("image-wrapper")}>
@@ -29,7 +30,7 @@ export const CardServiceShort = ({ count, titleCount, src, title, description }:
                 <div className={cx("title-wrapper")}>
                     <span className={cx("title")}>{title}</span>
                     <span className={cx("description")}>{description}</span>
-                    <Button mode="empty-button" label="Узнать больше" />
+                    <Button onClick={onClick} mode="empty-button" label="Узнать больше" />
                 </div>
             </div>
         </div>

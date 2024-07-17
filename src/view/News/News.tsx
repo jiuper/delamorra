@@ -4,6 +4,7 @@ import type { MenuItem } from "primereact/menuitem";
 import { BreadCrumb } from "@/components/BreadCrumb";
 import type { GetPromotionDto } from "@/entities";
 import { PageLayout } from "@/layouts/PageLayout";
+import { API_BASE } from "@/shared/constants/private";
 import { CustomImage } from "@/shared/ui/CustomImage";
 
 import styles from "./News.module.scss";
@@ -59,7 +60,7 @@ export const News = ({ promotion }: { promotion: GetPromotionDto }) => {
                     <CustomImage
                         width={1720}
                         height={600}
-                        src={`https://photo-studio-api.onrender.com/picture/${promotion.pictureId}`}
+                        src={`${API_BASE}/picture/${promotion.pictureId}`}
                         alt="PHOTO"
                     />
                 </div>

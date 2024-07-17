@@ -2,6 +2,7 @@ import cnBind from "classnames/bind";
 import Link from "next/link";
 
 import PRESENTFORM from "@/shared/assests/present-form.png";
+import { Routes } from "@/shared/constants/Routing";
 import { UIInputText } from "@/shared/ui/_InputText/InputText";
 import { Button } from "@/shared/ui/Button";
 import { CustomImage } from "@/shared/ui/CustomImage";
@@ -19,7 +20,7 @@ export const FormPresent = () => {
                     <div className={cx("description")}>
                         <div className={cx("description-text")}>
                             Заполните форму и получите{" "}
-                            <Link className={cx("link")} href="/">
+                            <Link className={cx("link")} href="#">
                                 1 час в подарок
                             </Link>
                         </div>
@@ -33,7 +34,7 @@ export const FormPresent = () => {
                         <div className={cx("buttons")}>
                             <div className={cx("privacy")}>
                                 <i>*</i>Нажимая на кнопку вы соглашаетесь с{" "}
-                                <Link className={cx("link")} href="/">
+                                <Link className={cx("link")} href={Routes.POLICY}>
                                     Политикой конфиденциальности
                                 </Link>
                             </div>

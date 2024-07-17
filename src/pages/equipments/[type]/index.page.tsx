@@ -3,6 +3,7 @@ import type { GetStaticPropsContext } from "next";
 
 import type { GetEquipmentDto } from "@/entities";
 import { EquipmentTypes } from "@/entities";
+import { API_BASE } from "@/shared/constants/private";
 import { Equipments } from "@/view/Equipments";
 
 export default function IndexPage({ equipments, type }: { equipments: GetEquipmentDto[]; type: string }) {
@@ -22,7 +23,7 @@ export const getStaticPaths = () => {
 };
 export const getStaticProps = async (ctx: GetStaticPropsContext) => {
     const type = ctx?.params?.type as string;
-    const resEquipments = await axios<GetEquipmentDto[]>("https://photo-studio-api.onrender.com/equipment");
+    const resEquipments = await axios<GetEquipmentDto[]>(`${API_BASE}/equipment`);
     const equipments = resEquipments.data;
 
     return {
