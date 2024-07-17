@@ -41,7 +41,7 @@ export const AdminEquipment = ({ equipment, isEdit }: Props) => {
         if (!isEdit) {
             void axios
                 .postForm<GetEquipmentDto>(
-                    "https://photo-studio-api.onrender.com/equipment/create",
+                    `${API_BASE}/equipment/create`,
                     {
                         ...value,
                         paperId: selectedId,
@@ -57,7 +57,7 @@ export const AdminEquipment = ({ equipment, isEdit }: Props) => {
         } else {
             void axios
                 .postForm(
-                    "https://photo-studio-api.onrender.com/equipment/update",
+                    `${API_BASE}/equipment/update`,
                     {
                         ...value,
                         id: selectedId,
@@ -91,7 +91,7 @@ export const AdminEquipment = ({ equipment, isEdit }: Props) => {
     };
     const handleDelete = () => {
         void axios
-            .delete(`https://photo-studio-api.onrender.com/equipment/${selectedId}`)
+            .delete(`${API_BASE}/equipment/${selectedId}`)
             .then((res) => (res.status === 200 ? alert("Удалено") : alert("Ошибка")));
         void router.reload();
         setValue({

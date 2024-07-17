@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { Dropdown } from "primereact/dropdown";
 
 import type { GetFavorDto } from "@/entities";
+import { API_BASE } from "@/shared/constants/private";
 import { Button } from "@/shared/ui/Button";
 import { TextField } from "@/shared/ui/TextField";
 
@@ -67,14 +68,14 @@ export const AdminFavor = ({ favor, isEdit }: PropsType) => {
     const onSubmit = () => {
         if (!isEdit) {
             void axios
-                .postForm<GetFavorDto>("https://photo-studio-api.onrender.com/favor/create", {
+                .postForm<GetFavorDto>(`${API_BASE}/favor/create`, {
                     ...value,
                     categoryId: selectedId,
                 })
                 .then((res) => (res.status === 201 ? alert("Категория добавлена") : alert("Категория уже существует")));
         } else {
             void axios
-                .putForm<GetFavorDto>("https://photo-studio-api.onrender.com/favor/update", {
+                .putForm<GetFavorDto>(`${API_BASE}/favor/update`, {
                     ...value,
                     categoryId: selectedId,
                 })

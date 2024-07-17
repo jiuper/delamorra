@@ -7,6 +7,7 @@ import { Dropdown } from "primereact/dropdown";
 import { InputNumber } from "primereact/inputnumber";
 
 import type { GetFilmingDto } from "@/entities";
+import { API_BASE } from "@/shared/constants/private";
 import { Button } from "@/shared/ui/Button";
 import { TextField } from "@/shared/ui/TextField";
 
@@ -34,13 +35,13 @@ export const AdminFilming = ({ isEdit, filming }: { isEdit: boolean; filming: Ge
     const onSubmit = () => {
         if (!isEdit) {
             void axios
-                .postForm("https://photo-studio-api.onrender.com/filming/create", {
+                .postForm(`${API_BASE}/filming/create`, {
                     value,
                 })
                 .then((res) => (res.status === 201 ? alert("Категория добавлена") : alert("Категория уже существует")));
         } else {
             void axios
-                .postForm(`https://photo-studio-api.onrender.com/filming/update`, {
+                .postForm(`${API_BASE}/filming/update`, {
                     ...value,
                     id: selectedId,
                 })
@@ -68,7 +69,7 @@ export const AdminFilming = ({ isEdit, filming }: { isEdit: boolean; filming: Ge
     };
     const handleDelete = () => {
         void axios
-            .delete(`https://photo-studio-api.onrender.com/filming/${selectedId}`)
+            .delete(`${API_BASE}/filming/${selectedId}`)
             .then((res) => (res.status === 200 ? alert("Удалено") : alert("Ошибка")));
         void router.reload();
         setValue({

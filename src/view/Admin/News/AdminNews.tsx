@@ -51,13 +51,13 @@ export const AdminNews = ({ promotion, isEdit }: Props) => {
     const onSubmit = () => {
         if (!isEdit) {
             void axios
-                .postForm("https://photo-studio-api.onrender.com/promotion/create", {
+                .postForm(`${API_BASE}/promotion/create`, {
                     ...value,
                 })
                 .then((res) => (res.status === 201 ? alert("Новость добавлена") : alert("Новость уже существует")));
         } else {
             void axios
-                .postForm("https://photo-studio-api.onrender.com/promotion/update", {
+                .postForm(`${API_BASE}/promotion/update`, {
                     ...value,
                     id: selectedId,
                 })
@@ -69,7 +69,7 @@ export const AdminNews = ({ promotion, isEdit }: Props) => {
     };
     const handleDelete = () => {
         void axios
-            .delete(`https://photo-studio-api.onrender.com/promotion/${selectedId}`)
+            .delete(`${API_BASE}/promotion/${selectedId}`)
             .then((res) => (res.status === 200 ? alert("Удалено") : alert("Ошибка")));
         void router.reload();
         setValue({
