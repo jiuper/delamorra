@@ -1,5 +1,4 @@
 const path = require("path");
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "standalone",
@@ -12,10 +11,10 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'photo-studio-api.onrender.com',
-        port: '',
-        pathname: '/picture/**',
+        protocol: "https",
+        hostname:"**",
+        port: "",
+        pathname: "**",
       },
     ],
   },

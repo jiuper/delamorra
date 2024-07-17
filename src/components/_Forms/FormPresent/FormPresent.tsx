@@ -20,7 +20,7 @@ export const FormPresent = () => {
                     <div className={cx("description")}>
                         <div className={cx("description-text")}>
                             Заполните форму и получите{" "}
-                            <Link className={cx("link")} href="#">
+                            <Link className={cx("link")} href="/">
                                 1 час в подарок
                             </Link>
                         </div>

@@ -20,6 +20,7 @@ const cx = cnBind.bind(styles);
 type ServicesProps = { favor: GetFavorDto[]; equipments: GetEquipmentDto[] };
 export const Services = ({ favor, equipments }: ServicesProps) => {
     const router = useRouter();
+    console.log(favor);
 
     return (
         <div className={cx("services")}>
