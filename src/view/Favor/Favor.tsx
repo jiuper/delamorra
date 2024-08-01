@@ -1,9 +1,11 @@
+import { useState } from "react";
 import cnBind from "classnames/bind";
 import { useRouter } from "next/router";
 import { Carousel } from "primereact/carousel";
 import type { MenuItem } from "primereact/menuitem";
 
 import { FormBooking } from "@/components/_Forms/FormBooking";
+import { ModalCallback } from "@/components/_Modals/ModalCallback";
 import { ModalTariff } from "@/components/_Modals/ModalTariff";
 import { BreadCrumb } from "@/components/BreadCrumb";
 import type { GetTariffDto } from "@/entities";
@@ -47,6 +49,13 @@ export const Favor = ({ tariff }: FavorProps) => {
         },
     ];
 
+    const [value, setValue] = useState<string>("");
+    const [isModalCallBack, onOpenModalCallBack, onCloseModalCallBack] = useBooleanState(false);
+    const handleOnClick = (val: string) => {
+        onOpenModalCallBack();
+        setValue(`Тариф: ${val}`);
+    };
+
     return (
         <PageLayout>
             <BreadCrumb model={breadcrumbs} />
@@ -87,8 +96,8 @@ export const Favor = ({ tariff }: FavorProps) => {
                 <div className={cx("tariffs")}>
                     <h2>Тарифы</h2>
                     <div className={cx("cards")}>
-                        {tariff.map((el) => (
-                            <CardTariff {...el} key={el.id} />
+                        {tariff.map((el, i) => (
+                            <CardTariff onClick={handleOnClick} {...el} count={i + 1} key={i} />
                         ))}
                     </div>
                 </div>
@@ -97,7 +106,8 @@ export const Favor = ({ tariff }: FavorProps) => {
             <AboutStudio />
             <FormBooking />
             <Gallery />
-            <ModalTariff tariff={tariff} isOpen={isModal} onClose={onCloseModal} />
+            <ModalTariff onClick={handleOnClick} tariff={tariff} isOpen={isModal} onClose={onCloseModal} />
+            <ModalCallback caption={value} onClose={onCloseModalCallBack} isOpen={isModalCallBack} />
         </PageLayout>
     );
 };

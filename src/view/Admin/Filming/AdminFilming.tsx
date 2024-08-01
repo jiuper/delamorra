@@ -4,7 +4,6 @@ import axios from "axios";
 import cnBind from "classnames/bind";
 import { useRouter } from "next/router";
 import { Dropdown } from "primereact/dropdown";
-import { InputNumber } from "primereact/inputnumber";
 
 import type { GetFilmingDto } from "@/entities";
 import { API_BASE } from "@/shared/constants/private";
@@ -26,7 +25,7 @@ export const AdminFilming = ({ isEdit, filming }: { isEdit: boolean; filming: Ge
         otherPrice: number;
     }>({
         title: "",
-        description: "",
+        description: "a",
         file: null,
         price: 0,
         otherPrice: 0,
@@ -35,9 +34,7 @@ export const AdminFilming = ({ isEdit, filming }: { isEdit: boolean; filming: Ge
     const onSubmit = () => {
         if (!isEdit) {
             void axios
-                .postForm(`${API_BASE}/filming/create`, {
-                    value,
-                })
+                .postForm(`${API_BASE}/filming/create`, value)
                 .then((res) => (res.status === 201 ? alert("Категория добавлена") : alert("Категория уже существует")));
         } else {
             void axios
@@ -47,7 +44,7 @@ export const AdminFilming = ({ isEdit, filming }: { isEdit: boolean; filming: Ge
                 })
                 .then((res) => (res.status === 201 ? alert("Категория добавлена") : alert("Категория уже существует")));
         }
-        // void router.reload();
+        void router.reload();
         setValue({
             title: "",
             description: "",
@@ -126,25 +123,6 @@ export const AdminFilming = ({ isEdit, filming }: { isEdit: boolean; filming: Ge
                     value={value.title}
                     className={cx("input-title")}
                     onChange={(e) => handleChangeValue("title", e.target.value)}
-                />
-                <TextField
-                    mode="light"
-                    placeholder="Описание"
-                    value={value.description}
-                    className={cx("input-title")}
-                    onChange={(e) => handleChangeValue("description", e.target.value)}
-                />
-                <InputNumber
-                    placeholder="Цена"
-                    value={value.price}
-                    className={cx("input-title")}
-                    onChange={(e) => handleChangeValue("price", e.value === null ? 0 : e.value)}
-                />
-                <InputNumber
-                    placeholder="Цена"
-                    value={value.otherPrice}
-                    className={cx("input-title")}
-                    onChange={(e) => handleChangeValue("otherPrice", e.value === null ? 0 : e.value)}
                 />
                 <div className={cx("file")}>
                     Загрузить картинку

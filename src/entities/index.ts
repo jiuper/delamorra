@@ -32,9 +32,8 @@ export type GetEquipmentDto = {
 
 export type GetTariffDto = {
     id: string;
-    timeInterval: string;
-    savings: number;
-    options: string[];
+    caption: string;
+    description: string;
     price: number;
 };
 export type GetPromotionDto = {

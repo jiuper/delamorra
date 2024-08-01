@@ -1,3 +1,4 @@
+import { useState } from "react";
 import cnBind from "classnames/bind";
 
 import { ModalCallback } from "@/components/_Modals/ModalCallback";
@@ -14,17 +15,22 @@ type ViewFooTageProps = {
 };
 export const ViewFooTage = ({ filming }: ViewFooTageProps) => {
     const [isModal, onOpenModal, onCloseModal] = useBooleanState(false);
+    const [value, setValue] = useState<string>("");
+    const handleOnClick = (val: string) => {
+        onOpenModal();
+        setValue(`Услуга: ${val}`);
+    };
 
     return (
         <div className={cx("view-foo-tage")} id="filmImg">
             <div className={cx("wrapper", "container")}>
                 <div className={cx("header")}>
-                    <h2>Виды сьемок</h2>
+                    <h2>Виды съемок</h2>
                 </div>
                 <div className={cx("cards")}>
                     {filming.map((el) => (
                         <CardFootTage
-                            onClick={onOpenModal}
+                            onClick={handleOnClick}
                             key={el.id}
                             src={`${API_BASE}/picture/${el.pictureId}`}
                             {...el}
@@ -32,7 +38,7 @@ export const ViewFooTage = ({ filming }: ViewFooTageProps) => {
                     ))}
                 </div>
             </div>
-            <ModalCallback onClose={onCloseModal} isOpen={isModal} />
+            <ModalCallback caption={value} onClose={onCloseModal} isOpen={isModal} />
         </div>
     );
 };

@@ -1,4 +1,3 @@
-import { FormBooking } from "@/components/_Forms/FormBooking";
 import { FormPresent } from "@/components/_Forms/FormPresent";
 import type { GetEquipmentDto, GetFavorDto, GetFilmingDto, GetPromotionDto } from "@/entities";
 import { EquipmentTypes } from "@/entities";
@@ -30,7 +29,7 @@ export const Main = ({ filming, favor, promotion, equipments }: MainProps) => {
             <FormPresent />
             <Sale promotion={promotion} />
             <AboutUs />
-            <FormBooking />
+            {/* <FormBooking /> */}
             <Gallery />
         </PageLayout>
     );

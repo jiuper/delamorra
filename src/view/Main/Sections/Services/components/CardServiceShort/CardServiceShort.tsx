@@ -12,7 +12,7 @@ type CardServiceShortProps = {
     titleCount?: string;
     title: string;
     description: string;
-    onClick?: () => void;
+    onClick?: (val: string) => void;
 };
 export const CardServiceShort = ({ count, titleCount, src, title, description, onClick }: CardServiceShortProps) => {
     return (
@@ -30,7 +30,7 @@ export const CardServiceShort = ({ count, titleCount, src, title, description, o
                 <div className={cx("title-wrapper")}>
                     <span className={cx("title")}>{title}</span>
                     <span className={cx("description")}>{description}</span>
-                    <Button onClick={onClick} mode="empty-button" label="Узнать больше" />
+                    <Button onClick={() => onClick?.(title)} mode="empty-button" label="Узнать больше" />
                 </div>
             </div>
         </div>

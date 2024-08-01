@@ -15,14 +15,14 @@ const cx = cnBind.bind(styles);
 export const AboutStudio = () => {
     const router = useRouter();
     const studioList = [
-        { src: STUDIOONE, text: "Семейных фотосессий" },
-        { src: STUDIOTWO, text: "Индивидуальных портретов" },
-        { src: STUDIOTHREE, text: "Fashion-съемок/Креативных съемок " },
-        { src: STUDIOFOUR, text: "Фотосъемки товаров для маркетплейсов" },
-        { src: STUDIOONE, text: "Семейных фотосессий" },
-        { src: STUDIOTWO, text: "Индивидуальных портретов" },
-        { src: STUDIOTHREE, text: "Fashion-съемок/Креативных съемок " },
-        { src: STUDIOFOUR, text: "Фотосъемки товаров для маркетплейсов" },
+        { src: STUDIOONE, text: " Съемки роликов (Ютуб, Инстаграм, Тик-ток)" },
+        { src: STUDIOTWO, text: "Проведения фотосессий всех видов" },
+        { src: STUDIOTHREE, text: "Мастер-классов" },
+        { src: STUDIOFOUR, text: "Воркшопов" },
+        { src: STUDIOONE, text: "Фотодней" },
+        { src: STUDIOTWO, text: "Курсов по моделингу" },
+        { src: STUDIOTHREE, text: "Съемок для брендов" },
+        { src: STUDIOFOUR, text: "Кинопоказов" },
     ];
 
     return (

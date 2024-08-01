@@ -16,10 +16,11 @@ type ModalCallbackProps = {
     onClose: () => void;
     isOpen: boolean;
     title?: string;
+    caption?: string;
 };
 export const phoneRegExp =
     /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
-export const ModalCallback = ({ onClose, isOpen, title = "Обратный звонок" }: ModalCallbackProps) => {
+export const ModalCallback = ({ onClose, isOpen, title = "Обратный звонок", caption }: ModalCallbackProps) => {
     const formik = useFormik({
         initialValues: {
             name: "",
@@ -45,6 +46,7 @@ export const ModalCallback = ({ onClose, isOpen, title = "Обратный зв�
                 <div className={cx("title")}>
                     <span>Заполните форму и мы свяжемся с вами</span>
                 </div>
+                <div className={cx("title")}>{caption}</div>
                 <div className={cx("form")}>
                     <TextField
                         value={formik.values.name}

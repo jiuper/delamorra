@@ -7,6 +7,7 @@ import { Sidebar } from "primereact/sidebar";
 
 import { Logo } from "@/components/Logo";
 import { Navbar } from "@/components/NavBar";
+import INS from "@/shared/assests/icons/insta.png";
 import TG from "@/shared/assests/icons/tg.png";
 import VK from "@/shared/assests/icons/vk.png";
 import WA from "@/shared/assests/icons/wa.png";
@@ -27,6 +28,10 @@ export const socialItems = [
     {
         icon: WA,
         url: "https://wa.me/79261234567",
+    },
+    {
+        icon: INS,
+        url: "https://wa.me/delamorra",
     },
 ];
 

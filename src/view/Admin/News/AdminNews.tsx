@@ -51,9 +51,7 @@ export const AdminNews = ({ promotion, isEdit }: Props) => {
     const onSubmit = () => {
         if (!isEdit) {
             void axios
-                .postForm(`${API_BASE}/promotion/create`, {
-                    ...value,
-                })
+                .postForm(`${API_BASE}/promotion/create`, value)
                 .then((res) => (res.status === 201 ? alert("Новость добавлена") : alert("Новость уже существует")));
         } else {
             void axios
@@ -65,7 +63,7 @@ export const AdminNews = ({ promotion, isEdit }: Props) => {
         }
 
         setValue({ title: "", description: "", file: null, savings: 0 });
-        void router.reload();
+        // void router.reload();
     };
     const handleDelete = () => {
         void axios
@@ -126,7 +124,7 @@ export const AdminNews = ({ promotion, isEdit }: Props) => {
                     placeholder="Цена скидки"
                     value={value.savings}
                     className={cx("input-title")}
-                    onChange={(e) => handleChange("otherPrice", e.value === null ? 0 : e.value)}
+                    onChange={(e) => handleChange("savings", e.value === null ? 0 : e.value)}
                 />
                 <div className={cx("file")}>
                     <span>Загрузить картинку</span>

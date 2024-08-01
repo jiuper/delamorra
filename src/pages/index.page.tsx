@@ -20,9 +20,9 @@ export default function IndexPage({
 
 export const getStaticProps = async () => {
     const resFilming = await axios<GetFilmingDto[]>(`${API_BASE}/filming`);
-    const resFavor = await axios<GetFilmingDto[]>(`${API_BASE}/favor`);
+    const resFavor = await axios<GetFavorDto[]>(`${API_BASE}/favor`);
     const resPromotion = await axios<GetPromotionDto[]>(`${API_BASE}/promotion`);
-    const resEquipments = await axios<GetPromotionDto[]>(`${API_BASE}/equipment`);
+    const resEquipments = await axios<GetEquipmentDto[]>(`${API_BASE}/equipment`);
     const promotion = resPromotion.data;
     const filming = resFilming.data;
     const favor = resFavor.data;
