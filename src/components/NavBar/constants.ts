@@ -4,7 +4,7 @@ import { Routes } from "@/shared/constants/Routing";
 type NavbarTypeProps = { label: string; url?: string; items?: { label: string; url: string }[] }[];
 export const items: NavbarTypeProps = [
     {
-        label: "Виды съемок",
+        label: "Виды съёмок",
         url: Routes.FILMIMG,
     },
 

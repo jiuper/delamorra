@@ -31,7 +31,7 @@ export const socialItems = [
     },
     {
         icon: INS,
-        url: "https://wa.me/delamorra",
+        url: "https://www.instagram.com/della.morra?igsh=aDB3cmpyemVmZ2pt",
     },
 ];
 

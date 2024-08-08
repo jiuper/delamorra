@@ -25,7 +25,7 @@ export const ViewFooTage = ({ filming }: ViewFooTageProps) => {
         <div className={cx("view-foo-tage")} id="filmImg">
             <div className={cx("wrapper", "container")}>
                 <div className={cx("header")}>
-                    <h2>Виды съемок</h2>
+                    <h2>Виды съёмок</h2>
                 </div>
                 <div className={cx("cards")}>
                     {filming.map((el) => (
