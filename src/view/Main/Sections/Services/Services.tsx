@@ -10,7 +10,7 @@ import CARDWOMENFOUR from "@/shared/assests/card-women-four.png";
 import CARDWOMENTHREE from "@/shared/assests/card-women-three.png";
 import CARDWOMENTWO from "@/shared/assests/card-women-two.png";
 import SERTIFICATE from "@/shared/assests/аренда.jpg";
-import SERTIFICATE_1 from "@/shared/assests/индивид.jpg";
+import SERTIFICATE_1 from "@/shared/assests/Мокап абонемента.jpg";
 import { API_BASE } from "@/shared/constants/private";
 import { Routes } from "@/shared/constants/Routing";
 import { useBooleanState } from "@/shared/hooks";

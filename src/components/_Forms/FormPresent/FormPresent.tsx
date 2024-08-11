@@ -1,7 +1,11 @@
 import cnBind from "classnames/bind";
+import { useFormik } from "formik";
 import Link from "next/link";
+import * as Yup from "yup";
 
+import { phoneRegExp } from "@/components/_Modals/ModalCallback";
 import PRESENTFORM from "@/shared/assests/present-form.png";
+import { API_BASE } from "@/shared/constants/private";
 import { Routes } from "@/shared/constants/Routing";
 import { UIInputText } from "@/shared/ui/_InputText/InputText";
 import { Button } from "@/shared/ui/Button";
@@ -12,6 +16,24 @@ import styles from "./FormPresent.module.scss";
 const cx = cnBind.bind(styles);
 
 export const FormPresent = () => {
+    const formik = useFormik({
+        initialValues: {
+            name: "",
+            phone: "",
+        },
+        onSubmit: async (values) => {
+            await fetch(`${API_BASE}/mail`, {
+                method: "post",
+                body: JSON.stringify(values),
+            }).then((res) => res.ok);
+            formik.resetForm();
+        },
+        validationSchema: Yup.object({
+            name: Yup.string().required(),
+            phone: Yup.string().matches(phoneRegExp, "Неверный формат номера").required("Обязательное поле"),
+        }),
+    });
+
     return (
         <div className={cx("form-present")}>
             <div className={cx("wrapper", "container")}>
@@ -26,14 +48,30 @@ export const FormPresent = () => {
                         </div>
                         <span>Мы свяжемся с Вами в течении 10 мин!</span>
                     </div>
-                    <form action="" className={cx("form")}>
+                    <form onSubmit={formik.handleSubmit} className={cx("form")}>
                         <div className={cx("inputs")}>
-                            <UIInputText type="text" label="Ваше имя" isFullWidth />
-                            <UIInputText type="text" label="Номер телефона" isFullWidth />
+                            <UIInputText
+                                value={formik.values.name}
+                                onChange={formik.handleChange}
+                                name="name"
+                                type="text"
+                                label="Ваше имя"
+                                isFullWidth
+                                color="grey"
+                            />
+                            <UIInputText
+                                value={formik.values.phone}
+                                onChange={formik.handleChange}
+                                type="text"
+                                name="phone"
+                                label="Номер телефона"
+                                isFullWidth
+                                color="grey"
+                            />
                         </div>
                         <div className={cx("buttons")}>
                             <div className={cx("privacy")}>
-                                <i>*</i>Нажимая на кнопку вы соглашаетесь с{" "}
+                                <i>*</i>Нажимая на кнопку вы соглашаетесь с
                                 <Link className={cx("link")} href={Routes.POLICY}>
                                     Политикой конфиденциальности
                                 </Link>
