@@ -68,6 +68,7 @@ export const AdminFavor = ({ favor, isEdit }: PropsType) => {
     const onSubmit = () => {
         if (!isEdit) {
             void axios
+                // @typescript-eslint/restrict-template-expressions
                 .postForm<GetFavorDto>(`${API_BASE}/favor/create`, {
                     ...value,
                     categoryId: selectedId,
@@ -75,6 +76,7 @@ export const AdminFavor = ({ favor, isEdit }: PropsType) => {
                 .then((res) => (res.status === 201 ? alert("Категория добавлена") : alert("Категория уже существует")));
         } else {
             void axios
+                // @typescript-eslint/restrict-template-expressions
                 .putForm<GetFavorDto>(`${API_BASE}/favor/update`, {
                     ...value,
                     categoryId: selectedId,

@@ -41,6 +41,7 @@ export const AdminEquipment = ({ equipment, isEdit }: Props) => {
         if (!isEdit) {
             void axios
                 .postForm<GetEquipmentDto>(
+                    // @typescript-eslint/restrict-template-expressions
                     `${API_BASE}/equipment/create`,
                     {
                         ...value,
@@ -57,6 +58,7 @@ export const AdminEquipment = ({ equipment, isEdit }: Props) => {
         } else {
             void axios
                 .postForm(
+                    // @typescript-eslint/restrict-template-expressions
                     `${API_BASE}/equipment/update`,
                     {
                         ...value,
@@ -91,6 +93,7 @@ export const AdminEquipment = ({ equipment, isEdit }: Props) => {
     };
     const handleDelete = () => {
         void axios
+            // @typescript-eslint/restrict-template-expressions
             .delete(`${API_BASE}/equipment/${selectedId}`)
             .then((res) => (res.status === 200 ? alert("Удалено") : alert("Ошибка")));
         void router.reload();

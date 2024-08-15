@@ -40,6 +40,7 @@ export const Equipments = ({ listEquipments, type }: EquipmentsProps) => {
                                 onClick={onOpenModal}
                                 key={el.id}
                                 {...el}
+                                // @typescript-eslint/restrict-template-expressions
                                 pictureId={`${API_BASE}/picture/${el.pictureId}`}
                             />
                         ))}

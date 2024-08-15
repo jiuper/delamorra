@@ -20,6 +20,11 @@ export const PageLayout = ({ children, title }: PageLayoutProps) => {
         <>
             <Head>
                 <link href="/next.svg" rel="icon" type="image/svg+xml" />
+                <meta
+                    name="viewport"
+                    content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+                />
+                <meta name="viewport" content="width=device-width" />
                 {title && <title>{title}</title>}
             </Head>
 

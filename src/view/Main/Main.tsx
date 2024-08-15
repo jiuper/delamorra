@@ -1,10 +1,7 @@
-import { TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
-
 import { FormPresent } from "@/components/_Forms/FormPresent";
 import type { GetEquipmentDto, GetFavorDto, GetFilmingDto, GetPromotionDto } from "@/entities";
 import { EquipmentTypes } from "@/entities";
 import { PageLayout } from "@/layouts/PageLayout";
-import def from "@/shared/assests/Мокап абонемента.jpg";
 import { AboutStudio } from "@/view/Main/Sections/AboutStudio";
 import { AboutUs } from "@/view/Main/Sections/AboutUs";
 import { Booking } from "@/view/Main/Sections/Booking";
@@ -34,11 +31,6 @@ export const Main = ({ filming, favor, promotion, equipments }: MainProps) => {
             <AboutUs />
             {/* <FormBooking /> */}
             <Gallery />
-            <TransformWrapper>
-                <TransformComponent>
-                    <img style={{ width: "400px", height: "400px" }} src={def.src} alt="image" />
-                </TransformComponent>
-            </TransformWrapper>
         </PageLayout>
     );
 };

@@ -48,6 +48,7 @@ export const Equipment = ({ equipments }: { equipments: GetEquipmentDto[] }) => 
                         <CardEquipment
                             key={card.id}
                             {...card}
+                            // @typescript-eslint/restrict-template-expressions
                             pictureId={equipments.length ? `${API_BASE}/picture/${card.pictureId}` : card.pictureId}
                             onClick={onOpenModal}
                         />
