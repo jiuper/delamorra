@@ -7,10 +7,10 @@ import { Sidebar } from "primereact/sidebar";
 
 import { Logo } from "@/components/Logo";
 import { Navbar } from "@/components/NavBar";
-import INS from "@/shared/assests/icons/insta.png";
-import TG from "@/shared/assests/icons/tg.png";
-import VK from "@/shared/assests/icons/vk.png";
-import WA from "@/shared/assests/icons/wa.png";
+import TG from "@/shared/assests/icons/1.svg";
+import VK from "@/shared/assests/icons/2.svg";
+import WA from "@/shared/assests/icons/3.svg";
+import INS from "@/shared/assests/icons/Component 18.svg";
 import { CustomImage } from "@/shared/ui/CustomImage";
 
 import styles from "./Header.module.scss";
@@ -18,19 +18,19 @@ import styles from "./Header.module.scss";
 const cx = cnBind.bind(styles);
 export const socialItems = [
     {
-        icon: VK,
+        icon: VK as string,
         url: "https://vk.com/delamorra",
     },
     {
-        icon: TG,
+        icon: TG as string,
         url: "https://t.me/delamorra",
     },
     {
-        icon: WA,
+        icon: WA as string,
         url: "https://wa.me/79261234567",
     },
     {
-        icon: INS,
+        icon: INS as string,
         url: "https://www.instagram.com/della.morra?igsh=aDB3cmpyemVmZ2pt",
     },
 ];
@@ -77,7 +77,10 @@ export const Header = () => {
                             </div>
                             <div className={cx("nav")}>
                                 <div className={cx("navbar-container")}>
-                                    <Navbar classNameItems={cx("navbar-items")} />
+                                    <Navbar
+                                        onClick={() => setVisibleRight(false)}
+                                        classNameItems={cx("navbar-items")}
+                                    />
                                 </div>
                             </div>
                             <div className={cx("sidebar-right")}>
@@ -89,7 +92,7 @@ export const Header = () => {
                                 <div className={cx("socials")}>
                                     {socialItems.map((item) => (
                                         <Link href={item.url} target="_blank" className={cx("social")} key={item.url}>
-                                            <CustomImage src={item.icon} alt="WA" width={20} height={20} />
+                                            <CustomImage src={item.icon} alt="WA" width={50} height={50} />
                                         </Link>
                                     ))}
                                 </div>
@@ -102,7 +105,7 @@ export const Header = () => {
                     <div className={cx("socials")}>
                         {socialItems.map((item) => (
                             <Link href={item.url} target="_blank" className={cx("social")} key={item.url}>
-                                <CustomImage src={item.icon} alt="WA" width={20} height={20} />
+                                <CustomImage src={item.icon} alt="WA" width={50} height={50} />
                             </Link>
                         ))}
                     </div>

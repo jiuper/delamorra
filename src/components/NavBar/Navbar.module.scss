@@ -74,6 +74,10 @@
             gap: 20px;
 
         }
+
+        @include media-max($screen-tablet){
+            left: -110px;
+        }
     }
 
 }

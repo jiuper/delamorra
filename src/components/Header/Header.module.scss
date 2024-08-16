@@ -81,8 +81,6 @@
     align-items: center;
     gap: 10px;
     .social{
-      border: 1px solid #EAE7DC;
-      padding: 20px;
       cursor: pointer;
     }
   }
@@ -188,14 +186,14 @@
   display: flex;
   gap: 30px;
   align-items: center;
+  flex-direction: column;
   justify-content: space-between;
   .socials{
     display: flex;
     align-items: center;
     gap: 10px;
     .social{
-      border: 1px solid #EAE7DC;
-      padding: 10px;
+      font-size: 30px;
       cursor: pointer;
     }
   }
@@ -213,7 +211,6 @@
       font-size: 14px;
       line-height: 140%;
       color: #E76325;
-      width: 50px;
     }
   }
 }

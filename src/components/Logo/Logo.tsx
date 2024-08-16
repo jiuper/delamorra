@@ -1,7 +1,7 @@
 import cnBind from "classnames/bind";
 import { useRouter } from "next/router";
 
-import LOGO from "@/shared/assests/logo.png";
+import LOGO from "@/shared/assests/svg/лого_без_фона_черный.png";
 import { Routes } from "@/shared/constants/Routing";
 import { CustomImage } from "@/shared/ui/CustomImage";
 

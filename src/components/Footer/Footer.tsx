@@ -21,7 +21,7 @@ export const Footer = () => {
         <footer className={cx("footer")}>
             <div className={cx("wrapper", "container")}>
                 <Logo />
-                <Navbar />
+                {!isMobile && <Navbar />}
                 <div className={cx("footer-content")}>
                     <div className={cx("bottom")}>
                         <div className={cx("contacts")}>
@@ -52,7 +52,7 @@ export const Footer = () => {
                         <div className={cx("socials")}>
                             {socialItems.map((item) => (
                                 <Link href={item.url} target="_blank" className={cx("social")} key={item.url}>
-                                    <CustomImage src={item.icon} alt="WA" width={20} height={20} />
+                                    <CustomImage src={item.icon} alt="WA" width={50} height={50} />
                                 </Link>
                             ))}
                         </div>
@@ -69,7 +69,7 @@ export const Footer = () => {
                         )}
                         {!isMobile && (
                             <div className={cx("copyright")}>
-                                Created by{" "}
+                                Created by{"\u00A0"}
                                 <Link className={cx("link")} href="https://levsha-web.ru/" target="_blank">
                                     Levsha
                                 </Link>
@@ -82,7 +82,7 @@ export const Footer = () => {
                 </div>
                 {isMobile && (
                     <div className={cx("copyright")}>
-                        Created by{" "}
+                        Created by{"\u00A0"}
                         <Link className={cx("link")} href="https://levsha-web.ru/" target="_blank">
                             Levsha
                         </Link>

@@ -3,7 +3,6 @@ import { useFormik } from "formik";
 import Link from "next/link";
 import * as Yup from "yup";
 
-import { phoneRegExp } from "@/components/_Modals/ModalCallback";
 import PRESENTFORM from "@/shared/assests/present-form.png";
 import { API_BASE } from "@/shared/constants/private";
 import { Routes } from "@/shared/constants/Routing";
@@ -30,7 +29,7 @@ export const FormPresent = () => {
         },
         validationSchema: Yup.object({
             name: Yup.string().required(),
-            phone: Yup.string().matches(phoneRegExp, "Неверный формат номера").required("Обязательное поле"),
+            phone: Yup.string(),
         }),
     });
 
@@ -71,7 +70,7 @@ export const FormPresent = () => {
                         </div>
                         <div className={cx("buttons")}>
                             <div className={cx("privacy")}>
-                                <i>*</i>Нажимая на кнопку вы соглашаетесь с
+                                <i>*</i>Нажимая на кнопку вы соглашаетесь с{" "}
                                 <Link className={cx("link")} href={Routes.POLICY}>
                                     Политикой конфиденциальности
                                 </Link>
